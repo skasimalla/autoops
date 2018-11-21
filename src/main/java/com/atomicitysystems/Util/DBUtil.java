@@ -83,7 +83,7 @@ public class DBUtil {
 		try {
 			initialContext = new InitialContext();
 			DataSource datasource = (DataSource) initialContext
-					.lookup("java:/comp/env/jdbc/autowatchuidb");
+					.lookup("java:/comp/env/jdbc/sunnydb");
 			conn = ((Statement) datasource).getConnection();
 		} catch (Exception e) {
 			e.printStackTrace();

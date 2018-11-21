@@ -10,28 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.atomicitysystems.Actions.PerformOperation;
 import com.atomicitysystems.Actions.RequestOperation;
+import com.atomicitysystems.DAO.Greeting;
+import com.atomicitysystems.DAO.Record;
 import com.atomicitysystems.Util.Constants;
 import com.atomicitysystems.Util.StringUtil;
 @Controller
 public class OATController {
-	private final static Logger LOGGER = Logger.getLogger(OATController.class.getName());
+	
 
-	@RequestMapping("/form")
-	public ModelAndView showMessage(
-			 @RequestParam(value = "action", required = false) String action
-			,@RequestParam(value = "requestor", required = false) String requestor
-			,@RequestParam(value = "team", required = false) String team
-			) {
-		System.out.println("in controller with param:" + action);
-		ModelAndView mv = new ModelAndView("form");
-		// Pull questions from DB based on name
-		List<String> list = new ArrayList<String>();
-		list = new StringUtil().returnTokens(action);
-		mv.addObject(Constants.list, list);
-		mv.addObject(Constants.action, action);
-		mv.addObject(Constants.requestor, requestor);
-		return mv;
-	}
 	@RequestMapping(value = ("/RequestAnOperation"), method = RequestMethod.GET)
 	public ModelAndView search(@RequestParam Map<String, String> allRequestParams) {
 		System.out.println("allRequestParams"+allRequestParams.toString());
@@ -70,10 +56,5 @@ public class OATController {
 		
 	}
 	
-	    @RequestMapping("/getList")
-	    public String getString()
-	    {
-	        return "Hello World";
-	    }
-
+	  
 }

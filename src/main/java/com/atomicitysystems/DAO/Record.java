@@ -2,19 +2,29 @@ package com.atomicitysystems.DAO;
 
 public class Record {
 
-    private final long id;
-    private final String content;
+    private String key;
+    private String value;
 
-    public Record(long id, String content) {
-        this.id = id;
-        this.content = content;
+    public Record(String key, String value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public long getId() {
-        return id;
-    }
+	public String getKey() {
+		return key;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+ 
 }
