@@ -50,10 +50,10 @@ public class RESTController {
 	}
 
 	@RequestMapping("/commandList")
-	public List<Record> commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
-		List li = new ArrayList();
-		for (int i = 0; i < 1000; i++)
-			li.add(new Greeting(counter.incrementAndGet(), String.format("List", name)));
+	public List commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
+		
+		Connection conn= DBUtil.getInstance().openConnectionH2();
+		List li =DBUtil.getInstance().getMappingListFromDB("Action", "%", conn);
 		return li;
 	}
 	
