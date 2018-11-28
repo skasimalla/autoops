@@ -23,7 +23,7 @@ public class RESTController {
 	}
 	
 	@RequestMapping("/form")
-	public List<Record> showMessage(
+	public List showMessage(
 			 @RequestParam(value = "action", required = false) String action
 			,@RequestParam(value = "requestor", required = false) String requestor
 			,@RequestParam(value = "team", required = false) String team
@@ -46,15 +46,21 @@ public class RESTController {
 			}
 			li.add(new Record(s1, s2 ));
 		}
+		
 		return li;
 	}
 
 	@RequestMapping("/commandList")
-	public List commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
+	public List<Record> commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
 		
 		Connection conn= DBUtil.getInstance().openConnectionH2();
 		List li =DBUtil.getInstance().getMappingListFromDB("Action", "%", conn);
-		return li;
+		
+		List<Record> li2 = new ArrayList();
+		for (int i = 0; i < li.size(); i++)
+			li2.add(new Record(""+counter.incrementAndGet(),(String) li.get(i) ));
+		
+		return li2;
 	}
 	
 	@RequestMapping("/authenticate")
