@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>COAT</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<script>
+function querySt(ji) {
+
+    hu = window.location.search.substring(1);
+    gy = hu.split("&");
+
+    for (i=0;i<gy.length;i++) {
+        ft = gy[i].split("=");
+        if (ft[0] == ji) {
+            return ft[1];
+        }
+    }
+}
+var c = querySt("txnNumber");
+
+</script>
+
+<body>
+	<center>
+		<h2>Operations Automation Tool</h2>
+		<form action="PerformOperation" class="form-group form-control">
+			
+			 <label class="control-label col-sm-2" for="email">Transaction ID:</label>
+			 <div class="col-sm-10">
+			<input type="text" class="form-control" id="txnNumberID" name="txnNumber" >
+			</div>
+			<script>document.getElementById('txnNumberID').value = c;</script>
+			<br> <br> Username:<input type="text" name="userName">
+			<br> <br> Password:<input type="text" name="password">
+
+			<br> <br> Type: <input list="sl" name="type">
+			<datalist id="sl">
+			<option value="no additional authentication">
+			<option value="pbrun -u dap user">
+			<option value="pbrun user">
+			
+			</datalist>
+
+
+			<br> <br> Token:<input type="text" name="token"> <br>
+			<br> <br> <br> <input type="submit" value="Submit">
+		</form>
+	</center>
+</body>
+</html>
