@@ -2,41 +2,29 @@ package com.atomicitysystems.DAO;
 
 public class Mapping {
 
-    private String category;
-    private String columnName;
-    private String mapping;
+    private String key;
+    private String value;
     
     
-	public Mapping(String category, String columnName, String mapping) {
-		this.category = category;
-		this.columnName = columnName;
-		this.mapping = mapping;
+    
+	public Mapping(String key, String value) {
+		this.key = key;
+		this.value = value;
 	}
-
-	public Mapping(String columnName, String mapping) {
-		this.columnName = columnName;
-		this.mapping = mapping;
-	}
-
 	
-	public String getCategory() {
-		return category;
+	public String getKey() {
+		return key;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setKey(String key) {
+		this.key = key;
 	}
-	public String getColumnName() {
-		return columnName;
+	public String getValue() {
+		return value;
 	}
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
+	public void setValue(String value) {
+		this.value = value;
 	}
-	public String getMapping() {
-		return mapping;
-	}
-	public void setMapping(String mapping) {
-		this.mapping = mapping;
-	}
+    
     
 
  
