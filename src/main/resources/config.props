@@ -1,0 +1,20 @@
+#URL where this app is saved
+baseLink=http://localhost:8090/
+baseLocation=default
+
+#Output files
+output_folder=http://localhost:8080/shared/
+share_location=/Installations/apache-tomcat-9.0.11/webapps/shared/
+
+#Accept and reject URLs
+accept_url=OperationApproval
+reject_url=OperationReject
+
+#Emails
+from_DL=safelyops@safelyops.com
+bcc_DL=safelyops@safelyops.com
+emailPostFix=@imcnam.ssmb.com
+
+#JDBC connection
+jdbc_connection_string=jdbc:h2:tcp://localhost/~/oat/oat;USER=oat;PASSWORD=123456
+

@@ -1,4 +1,5 @@
 package com.atomicitysystems.Util;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,20 +8,23 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import com.atomicitysystems.DAO.Mapping;
+
 public class StringUtil {
 	public static StringUtil x;
+
 	public static StringUtil getInstance() {
 		if (x == null) {
 			x = new StringUtil();
 		}
 		return x;
 	}
+
 	private final static Logger LOGGER = Logger.getLogger(StringUtil.class.getName());
 
 	public static void main(String args[]) {
-		new StringUtil()
-				.returnTokens("SCP File from your server to destination");
+		new StringUtil().returnTokens("SCP File from your server to destination");
 	}
+
 	public List<String> returnTokens(String s) {
 		Connection conn = DBUtil.getInstance().openConnectionH2();
 		s = DBUtil.getInstance().getMappingValueFromDB("Action", s, conn);
@@ -34,6 +38,7 @@ public class StringUtil {
 		LOGGER.info(li.toString());
 		return li;
 	}
+
 	public ArrayList<String> returnActions() {
 		Connection conn = DBUtil.getInstance().openConnectionH2();
 		ArrayList<String> li = null;
@@ -44,23 +49,19 @@ public class StringUtil {
 		}
 		return li;
 	}
-	
+
 	public void sendEmailWrapper(HashMap<String, String> hm, Connection conn) {
 		HashMap<String, String> hmMail = new HashMap<String, String>();
-
 		String from_DL = FileUtil.getInstance().getProp("from_DL");
 		String bcc_DL = FileUtil.getInstance().getProp("bcc_DL");
 		String emailPostFix = FileUtil.getInstance().getProp("emailPostFix");
-
-		
-		String subject = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplateSubject,Constants.RequestCompleted, conn);
-		String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,Constants.RequestCompleted, conn);
-
+		String subject = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplateSubject,
+				Constants.RequestCompleted, conn);
+		String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,
+				Constants.RequestCompleted, conn);
 		String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
 		String htmlString = FileUtil.getInstance().readFile(filePath);
 		String requestor = hm.get(Constants.REQUESTOR);
-		
-		
 		for (String key : hm.keySet()) {
 			subject = subject.replaceAll("\\$\\{" + key + "\\}", hm.get(key));
 			htmlString = htmlString.replaceAll("\\$\\{" + key + "\\}", hm.get(key));
@@ -72,28 +73,25 @@ public class StringUtil {
 		hmMail.put(Constants.subject, subject);
 		hmMail.put(Constants.htmlString, htmlString);
 		new SendMail(hmMail).sendEmail();
+	}
 
-	
-	}
-	
 	public List<Mapping> someStringOps(String action) {
-	System.out.println("in controller with param:" + action);
-	List<String> list = new StringUtil().returnTokens(action);
-	System.out.println(list);
-	List<Mapping> li = new ArrayList<Mapping>();
-	for (String s : list) {
-		String[] sa = s.split(":");
-		String s1, s2;
-		if (sa.length == 2) {
-			s1 = sa[0];
-			s2 = sa[1];
-		} else {
-			s1 = "text";
-			s2 = sa[0];
+		System.out.println("in controller with param:" + action);
+		List<String> list = new StringUtil().returnTokens(action);
+		System.out.println(list);
+		List<Mapping> li = new ArrayList<Mapping>();
+		for (String s : list) {
+			String[] sa = s.split(":");
+			String s1, s2;
+			if (sa.length == 2) {
+				s1 = sa[0];
+				s2 = sa[1];
+			} else {
+				s1 = "text";
+				s2 = sa[0];
+			}
+			li.add(new Mapping(s1, s2));
 		}
-		li.add(new Mapping(s1, s2));
+		return li;
 	}
-	return li;
-}
-	
 }

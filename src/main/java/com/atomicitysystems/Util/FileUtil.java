@@ -50,6 +50,7 @@ public class FileUtil {
 		InputStream is = null;
 		try {
 			is = new FileInputStream(path);
+			//is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
 			prop.load(is);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

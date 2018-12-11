@@ -120,6 +120,10 @@ public class SendMail {
 	}
 
 	public InternetAddress[] recepientAddresses(String recipients) throws AddressException {
+		
+		if(recipients==null)
+			System.out.println("No recipient specified");
+		
 		String[] recipientList = recipients.split(",");
 		InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
 		int counter = 0;

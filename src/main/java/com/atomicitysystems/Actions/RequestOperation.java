@@ -32,7 +32,7 @@ public class RequestOperation {
 			String bcc_DL = FileUtil.getInstance().getProp("bcc_DL");
 			HashMap<String, String> parameterMap = new HashMap<String, String>();
 			HashMap<String, String> hmMail = new HashMap<String, String>();
-			String to;
+			
 			parameterMap.put(Constants.action, preParameterMap.get(Constants.action));
 			preParameterMap.remove(Constants.action);
 			parameterMap.put(Constants.server, preParameterMap.get(Constants.server));
@@ -57,6 +57,7 @@ public class RequestOperation {
 					e.printStackTrace();
 				}
 			}
+		
 			System.out.println("Completed command is" + command);
 			parameterMap.put(Constants.param, command);
 			System.out.println("Preparam map is " + preParameterMap.toString());
@@ -82,7 +83,7 @@ public class RequestOperation {
 					e.printStackTrace();
 				}
 			}
-			to = DBUtil.getInstance().getMappingValueFromDB(Constants.TeamNameMapping, parameterMap.get(Constants.team),
+			String to = DBUtil.getInstance().getMappingValueFromDB(Constants.TeamNameMapping, parameterMap.get(Constants.team),
 					conn);
 			hmMail.put(Constants.from, from_DL);
 			hmMail.put(Constants.to, to);
