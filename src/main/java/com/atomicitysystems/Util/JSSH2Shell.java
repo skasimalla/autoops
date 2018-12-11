@@ -2,7 +2,6 @@ package com.atomicitysystems.Util;
 
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.logging.Logger;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelShell;
 import com.jcraft.jsch.JSch;
@@ -11,8 +10,6 @@ import com.jcraft.jsch.Session;
 public class JSSH2Shell {
 	static Session session;
 	static Channel channel;
-	private final static Logger LOGGER = Logger.getLogger(SendMail.class.getName());
-
 	public static void main(String[] args) {
 		JSSH2Shell s1 = new JSSH2Shell();
 		String user = "sunny";

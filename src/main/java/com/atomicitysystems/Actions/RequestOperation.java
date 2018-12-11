@@ -3,8 +3,6 @@ package com.atomicitysystems.Actions;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
-import com.atomicitysystems.DAO.SaveTxn;
 import com.atomicitysystems.Util.Constants;
 import com.atomicitysystems.Util.DBUtil;
 import com.atomicitysystems.Util.FileUtil;
@@ -19,17 +17,17 @@ public class RequestOperation {
 		}
 		return x;
 	}
-	private final static Logger LOGGER = Logger.getLogger(RequestOperation.class.getName());
 
 	public static void main(String[] args) {
-
 	}
 
 	public String requestHandler(Map<String, String> preParameterMap) {
 		String txnNumber = null;
 		try {
-			String accept_url = FileUtil.getInstance().getProp("baseLink")+FileUtil.getInstance().getProp("accept_url");
-			String reject_url = FileUtil.getInstance().getProp("baseLink")+FileUtil.getInstance().getProp("reject_url");
+			String accept_url = FileUtil.getInstance().getProp("baseLink")
+					+ FileUtil.getInstance().getProp("accept_url");
+			String reject_url = FileUtil.getInstance().getProp("baseLink")
+					+ FileUtil.getInstance().getProp("reject_url");
 			String from_DL = FileUtil.getInstance().getProp("from_DL");
 			String bcc_DL = FileUtil.getInstance().getProp("bcc_DL");
 			HashMap<String, String> parameterMap = new HashMap<String, String>();
@@ -63,9 +61,8 @@ public class RequestOperation {
 			parameterMap.put(Constants.param, command);
 			System.out.println("Preparam map is " + preParameterMap.toString());
 			System.out.println("Param map is " + parameterMap.toString());
-			txnNumber = SaveTxn.saveTxnInDB(parameterMap);
+			txnNumber = DBUtil.getInstance().saveTxnInDB(parameterMap);
 			parameterMap.put("txnNumber", txnNumber);
-
 			parameterMap.put(Constants.accept_link, accept_url + "?" + Constants.txnNumber + "=" + txnNumber);
 			parameterMap.put(Constants.reject_link, reject_url + "?" + Constants.txnNumber + "=" + txnNumber);
 			String subject = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplateSubject,
@@ -84,7 +81,6 @@ public class RequestOperation {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
 			}
 			to = DBUtil.getInstance().getMappingValueFromDB(Constants.TeamNameMapping, parameterMap.get(Constants.team),
 					conn);

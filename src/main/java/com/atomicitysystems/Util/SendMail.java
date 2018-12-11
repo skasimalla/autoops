@@ -34,7 +34,7 @@ public class SendMail {
 
 		if (args.length == 7) {
 
-			HashMap<String, String> hm = new HashMap();
+			HashMap<String, String> hm = new HashMap<String, String>();
 			hm.put("from", args[0]);
 			hm.put("to", args[1]);
 			hm.put("cc", args[2]);

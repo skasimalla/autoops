@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import com.atomicitysystems.DAO.Mapping;
 public class StringUtil {
 	public static StringUtil x;
 	public static StringUtil getInstance() {
@@ -74,5 +75,25 @@ public class StringUtil {
 
 	
 	}
+	
+	public List<Mapping> someStringOps(String action) {
+	System.out.println("in controller with param:" + action);
+	List<String> list = new StringUtil().returnTokens(action);
+	System.out.println(list);
+	List<Mapping> li = new ArrayList<Mapping>();
+	for (String s : list) {
+		String[] sa = s.split(":");
+		String s1, s2;
+		if (sa.length == 2) {
+			s1 = sa[0];
+			s2 = sa[1];
+		} else {
+			s1 = "text";
+			s2 = sa[0];
+		}
+		li.add(new Mapping(s1, s2));
+	}
+	return li;
+}
 	
 }

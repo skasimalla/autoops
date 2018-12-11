@@ -11,10 +11,7 @@ import com.atomicitysystems.Util.FileUtil;
 import com.atomicitysystems.Util.JSSH2Shell;
 import com.atomicitysystems.Util.StringUtil;
 
-
 public class PerformOperation {
-
-
 	public static PerformOperation x;
 
 	public static PerformOperation getInstance() {
@@ -39,7 +36,6 @@ public class PerformOperation {
 		String type = allRequestParams.get(Constants.type);
 		String token = allRequestParams.get(Constants.token);
 		String fid = allRequestParams.get(Constants.fid);
-		
 		Connection conn = DBUtil.getInstance().openConnectionH2();
 		try {
 			LOGGER.info("Connection check " + conn.isClosed() + conn.isValid(10));
@@ -53,7 +49,6 @@ public class PerformOperation {
 		hm.put(Constants.output_link, output_link);
 		String host = hm.get(Constants.SERVER);
 		String command = hm.get(Constants.PARAM1);// Ready made command
-		
 		String result = new JSSH2Shell().commandExecutor(host, user, passwd, command, type, token, fid);
 		FileUtil.getInstance().writeToFile(share_location, txnNumber, result);
 		// Finished writing
