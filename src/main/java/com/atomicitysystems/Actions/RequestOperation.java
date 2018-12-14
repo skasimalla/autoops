@@ -70,10 +70,11 @@ public class RequestOperation {
 					Constants.RequestReceived, conn);
 			String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,
 					Constants.RequestReceived, conn);
-			System.out.println("htmlStringPath is" + htmlStringPath);
+			/*System.out.println("htmlStringPath is" + htmlStringPath);
 			String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
-			String htmlString = FileUtil.getInstance().readFile(filePath);
-			System.out.println("html str is " + htmlString);
+			*/
+			String htmlString = FileUtil.getInstance().readFile(htmlStringPath);
+			//System.out.println("html str is " + htmlString);
 			for (String key : parameterMap.keySet()) {
 				try {
 					System.out.println("Replacing" + key);
@@ -91,7 +92,7 @@ public class RequestOperation {
 			hmMail.put(Constants.bcc, bcc_DL);
 			hmMail.put(Constants.subject, subject);
 			hmMail.put(Constants.htmlString, htmlString);
-			System.out.println(hmMail.toString());
+			//System.out.println(hmMail.toString());
 			// SendMailRequest.getInstance().sendMailRequest(hmMail);
 			new SendMail(hmMail).sendEmail();
 		} catch (Exception e) {

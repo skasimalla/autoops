@@ -8,8 +8,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Properties;
 import java.util.logging.Logger;
+import org.apache.commons.io.IOUtils;
 
 public class FileUtil {
 	public static FileUtil o;
@@ -26,22 +28,21 @@ public class FileUtil {
 		LOGGER.info(FileUtil.getInstance().getProp("accept_url"));
 	}
 
-	public String readFile(String path) {
-		StringBuffer sb = new StringBuffer();
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-			String line = null;
-			while ((line = br.readLine()) != null) {
-				sb.append(line + "\n");
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public String readFile(String fileName) {
+		InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
+
+		StringWriter writer = new StringWriter();
+		try {
+			IOUtils.copy(is, writer, "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return sb.toString();
-	}
+		String theString = writer.toString();
+		
+		return theString;
+		
+}
 
 	public String getProp(String propName) {
 		//String path = System.getProperty("user.home") + "/" + Constants.appBaseFolder + "/" + Constants.propsFile;

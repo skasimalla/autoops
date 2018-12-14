@@ -61,7 +61,8 @@ public class StringUtil {
 				Constants.RequestCompleted, conn);
 		String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,
 				Constants.RequestCompleted, conn);
-		String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
+		//String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
+		String filePath = htmlStringPath;
 		String htmlString = FileUtil.getInstance().readFile(filePath);
 		String requestor = hm.get(Constants.REQUESTOR);
 		for (String key : hm.keySet()) {
