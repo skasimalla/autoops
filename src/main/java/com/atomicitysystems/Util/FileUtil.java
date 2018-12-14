@@ -44,13 +44,14 @@ public class FileUtil {
 	}
 
 	public String getProp(String propName) {
-		String path = System.getProperty("user.home") + "/" + Constants.appBaseFolder + "/" + Constants.propsFile;
-		LOGGER.info(path);
+		//String path = System.getProperty("user.home") + "/" + Constants.appBaseFolder + "/" + Constants.propsFile;
+		//LOGGER.info(path);
 		Properties prop = new Properties();
 		InputStream is = null;
+		
 		try {
-			is = new FileInputStream(path);
-			//is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
+			//is = new FileInputStream(path);
+			is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
 			prop.load(is);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

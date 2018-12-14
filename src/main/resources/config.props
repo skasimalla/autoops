@@ -3,17 +3,17 @@ baseLink=http://localhost:8090/
 baseLocation=default
 
 #Output files
-output_folder=http://localhost:8080/shared/
-share_location=/Installations/apache-tomcat-9.0.11/webapps/shared/
+output_folder=http://localhost:8000/
+share_location=/shared/
 
 #Accept and reject URLs
 accept_url=OperationApproval
 reject_url=OperationReject
 
 #Emails
-from_DL=safelyops@safelyops.com
-bcc_DL=safelyops@safelyops.com
-emailPostFix=@imcnam.ssmb.com
+from_DL=opsauto3@gmail.com
+bcc_DL=opsauto3@gmail.com
+emailPostFix=
 
 #JDBC connection
 jdbc_connection_string=jdbc:h2:tcp://localhost/~/oat/oat;USER=oat;PASSWORD=123456
