@@ -1,10 +1,10 @@
 #URL where this app is saved
-baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
+#baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
 baseLocation=default
 
 #Output files
 output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
-share_location=/shared/
+share_location=/oat/shared/
 
 #Accept and reject URLs
 accept_url=OperationApproval

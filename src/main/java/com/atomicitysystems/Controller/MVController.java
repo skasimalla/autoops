@@ -11,11 +11,11 @@ import com.atomicitysystems.Actions.PerformOperation;
 public class MVController {
 	//Another operation
 	@RequestMapping("/OperationApproval")
-	public ModelAndView showMessage1(@RequestParam(value = "txnNumber") String txnNumber) {
+	public String showMessage1(@RequestParam(value = "txnNumber") String txnNumber) {
 		System.out.println("in controller with param:" + txnNumber);
-		ModelAndView mv = new ModelAndView("perform");
-		mv.addObject("txnNumber", txnNumber);
-		return mv;
+		//ModelAndView mv = new ModelAndView("perform");
+		//mv.addObject("txnNumber", txnNumber);
+		return "perform";
 	}
 
 	@RequestMapping("/OperationReject")

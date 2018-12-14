@@ -28,10 +28,10 @@ var c = querySt("txnNumber");
 			
 			 <label class="control-label col-sm-2" for="email">Transaction ID:</label>
 			 <div class="col-sm-10">
-			<input type="text" class="form-control" id="txnNumberID" name="txnNumber" >
+			<input type="text" class="form-control" id="txnNumberID" name="txnNumber" value="${txnNumber}">
 			</div>
-			<script>document.getElementById('txnNumberID').value = c;</script>
-			<br> <br> Username:<input type="text" name="userName">
+			<!-- <script>document.getElementById('txnNumberID').value = c;</script>
+			 --><br> <br> Username:<input type="text" name="userName">
 			<br> <br> Password:<input type="text" name="password">
 
 			<br> <br> Type: <input list="sl" name="type">

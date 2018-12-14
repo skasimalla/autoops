@@ -105,6 +105,7 @@ public class SendMail {
 			// }
 
 			message.setContent(rootBodypart);
+			
 			Transport.send(message);
 			LOGGER.info("EMail sent Successfully !!");
 		} catch (MessagingException e) {
@@ -154,7 +155,7 @@ public class SendMail {
 			recipientAddress[counter] = new InternetAddress(recipient.trim());
 
 			counter++;
-			LOGGER.info("recipientAddress" + recipientAddress);
+			LOGGER.info("recipientAddress" + recipientList);
 		}
 		return recipientAddress;
 	}
