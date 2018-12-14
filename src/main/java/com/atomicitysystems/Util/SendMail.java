@@ -1,12 +1,17 @@
 package com.atomicitysystems.Util;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.logging.Logger;
+import javax.mail.Authenticator;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
@@ -28,7 +33,7 @@ public class SendMail {
 	private final static Logger LOGGER = Logger.getLogger(SendMail.class.getName());
 
 	public static void main(String[] args) {
-		String[] a = { "sunnybond49@gmail.com", "sunnybond49@gmail.com", "", "", "Subject", "", "Body" };
+		String[] a = { "opsauto3@gmail.com", "sunnybond49@gmail.com", "", "", "Subject", "", "Body" };
 
 		args = a;
 
@@ -68,7 +73,7 @@ public class SendMail {
 			message.addHeader("Content-type", "text/HTML; charset=UTF-8");
 			message.addHeader("format", "flowed");
 			message.addHeader("Content-Transfer-Encoding", "8bit");
-			message.setFrom(new InternetAddress(from));
+			message.setFrom(new InternetAddress(from, "SafelyOps"));
 			message.setReplyTo(InternetAddress.parse(from, false));
 			message.setSubject(subject, "UTF-8");
 
@@ -104,18 +109,36 @@ public class SendMail {
 			LOGGER.info("EMail sent Successfully !!");
 		} catch (MessagingException e) {
 			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	private Session mailcredentials() {
-		String smtpHostServer = "localhost";
-		Properties props = System.getProperties();
-		props.put("mail.smtp.starttls.enable", true);
-		props.put("mail.smtp.port", 25);
-		props.put("mail.smtp.host", smtpHostServer);
-		props.put("mail.smtp.auth", false);
-
-		Session session = Session.getInstance(props, null);
+		
+		Properties props = new Properties();
+		InputStream inputStream = 
+		    getClass().getClassLoader().getResourceAsStream("application.properties");
+		try {
+			props.load(inputStream);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String user=props.getProperty("mail.smtp.user");
+		String password=props.getProperty("mail.smtp.password");
+		
+		Authenticator pass = new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user,password);
+			}
+		  };
+		  
+		Session session = Session.getInstance(props, pass);
+	
+		
 		return session;
 	}
 
