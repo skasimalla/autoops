@@ -8,6 +8,7 @@ public class Mapping {
     
     
 	public Mapping(String key, String value) {
+		super();
 		this.key = key;
 		this.value = value;
 	}

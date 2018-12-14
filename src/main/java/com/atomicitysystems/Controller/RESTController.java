@@ -57,7 +57,7 @@ public class RESTController {
 	}
 
 	@RequestMapping("/form")
-	public List<Mapping> showMessage(@RequestParam(value = "action", required = false) String action,
+	public List<Mapping> showMessage(@RequestParam(value = "action", required = true) String action,
 			@RequestParam(value = "requestor", required = false) String requestor,
 			@RequestParam(value = "team", required = false) String team) {
 		//Move the below logic to String Utils

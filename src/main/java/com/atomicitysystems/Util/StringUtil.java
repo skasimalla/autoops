@@ -22,7 +22,9 @@ public class StringUtil {
 	private final static Logger LOGGER = Logger.getLogger(StringUtil.class.getName());
 
 	public static void main(String args[]) {
-		new StringUtil().returnTokens("SCP File from your server to destination");
+		System.out.println(new StringUtil().returnTokens("List the contents of a folder"));
+		//new StringUtil().someStringOps("SCP a file from one server to another");
+		
 	}
 
 	public List<String> returnTokens(String s) {
@@ -35,7 +37,7 @@ public class StringUtil {
 		while (m.find()) {
 			li.add(m.group(1));
 		}
-		LOGGER.info(li.toString());
+		LOGGER.info("returnTokens"+li.toString());
 		return li;
 	}
 
@@ -78,7 +80,7 @@ public class StringUtil {
 	public List<Mapping> someStringOps(String action) {
 		System.out.println("in controller with param:" + action);
 		List<String> list = new StringUtil().returnTokens(action);
-		System.out.println(list);
+		System.out.println("List is "+list);
 		List<Mapping> li = new ArrayList<Mapping>();
 		for (String s : list) {
 			String[] sa = s.split(":");
@@ -92,6 +94,7 @@ public class StringUtil {
 			}
 			li.add(new Mapping(s1, s2));
 		}
+		
 		return li;
 	}
 }
