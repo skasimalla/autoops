@@ -1,9 +1,9 @@
 #URL where this app is saved
-baseLink=http://localhost:8090/
+baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
 baseLocation=default
 
 #Output files
-output_folder=http://localhost:8000/
+output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
 share_location=/shared/
 
 #Accept and reject URLs
@@ -17,4 +17,3 @@ emailPostFix=
 
 #JDBC connection
 jdbc_connection_string=jdbc:h2:tcp://localhost/~/oat/oat;USER=oat;PASSWORD=123456
-
