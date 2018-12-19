@@ -77,7 +77,7 @@ public class RequestOperation {
 			//System.out.println("html str is " + htmlString);
 			for (String key : parameterMap.keySet()) {
 				try {
-					System.out.println("Replacing" + key);
+					System.out.println("Replacing" + key + "with "+parameterMap.get(key));
 					subject = subject.replaceAll("\\$\\{" + key + "\\}", parameterMap.get(key));
 					htmlString = htmlString.replaceAll("\\$\\{" + key + "\\}", parameterMap.get(key));
 				} catch (Exception e) {

@@ -29,7 +29,14 @@ public class PerformOperation {
 
 	public String performRequest(Map<String, String> allRequestParams) {
 		String output_folder = FileUtil.getInstance().getProp("output_folder");
-		String share_location = System.getProperty("user.home") + FileUtil.getInstance().getProp("share_location");
+		String share_location = "";
+		
+		if(FileUtil.getInstance().getProp("baseLocation").equals("home"))
+			share_location= System.getProperty("user.home") + FileUtil.getInstance().getProp("share_location");
+		else if (FileUtil.getInstance().getProp("baseLocation").equals("home"))
+			share_location= FileUtil.getInstance().getProp("share_location");
+			
+		
 		String user = allRequestParams.get(Constants.userName);
 		String passwd = allRequestParams.get(Constants.password);
 		String txnNumber = allRequestParams.get(Constants.txnNumber);

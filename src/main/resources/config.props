@@ -1,9 +1,10 @@
 #URL where this app is saved
-baseLink=http://localhost:8090/
-baseLocation=default
+baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
+#Options for below home or absolute
+baseLocation=home
 
 #Output files
-output_folder=http://localhost:8000/shared/
+output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
 share_location=/oat/shared/
 
 #Accept and reject URLs
@@ -13,6 +14,7 @@ reject_url=OperationReject
 #Emails
 from_DL=opsauto3@gmail.com
 bcc_DL=opsauto3@gmail.com
+#Don't delete the below, this can be used when org wide email is used
 emailPostFix=
 
 #JDBC connection
