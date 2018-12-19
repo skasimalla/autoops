@@ -1,6 +1,5 @@
 package com.atomicitysystems.Actions;
 
-import java.net.InetAddress;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,10 +24,8 @@ public class RequestOperation {
 	public String requestHandler(Map<String, String> preParameterMap) {
 		String txnNumber = null;
 		try {
-			/*String accept_url = FileUtil.getInstance().getProp("baseLink")
+			String accept_url = FileUtil.getInstance().getProp("baseLink")
 					+ FileUtil.getInstance().getProp("accept_url");
-			*/
-			String accept_url = "http://"+InetAddress.getLocalHost().getHostName()+":8090/PerformOperation";
 			String reject_url = FileUtil.getInstance().getProp("baseLink")
 					+ FileUtil.getInstance().getProp("reject_url");
 			String from_DL = FileUtil.getInstance().getProp("from_DL");

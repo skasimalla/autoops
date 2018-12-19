@@ -3,7 +3,7 @@ baseLink=http://localhost:8090/
 baseLocation=default
 
 #Output files
-output_folder=http://localhost:8000/shared/
+output_folder=http://localhost:8000/
 share_location=/oat/shared/
 
 #Accept and reject URLs
