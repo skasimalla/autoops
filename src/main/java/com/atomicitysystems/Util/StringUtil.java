@@ -28,7 +28,7 @@ public class StringUtil {
 	}
 
 	public List<String> returnTokens(String s) {
-		Connection conn = DBUtil.getInstance().openConnectionH2();
+		Connection conn = DBUtil.getInstance().getConnection();
 		s = DBUtil.getInstance().getMappingValueFromDB("Action", s, conn);
 		LOGGER.info("S is " + s);
 		// s = "ls -lrt ${text:PATH}";
@@ -42,7 +42,7 @@ public class StringUtil {
 	}
 
 	public ArrayList<String> returnActions() {
-		Connection conn = DBUtil.getInstance().openConnectionH2();
+		Connection conn = DBUtil.getInstance().getConnection();
 		ArrayList<String> li = null;
 		li = DBUtil.getInstance().getMappingListFromDB("Action", "%", conn);
 		if (li == null) {

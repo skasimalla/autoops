@@ -2,6 +2,7 @@ package com.atomicitysystems.Controller;
 
 import java.util.Map;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,10 +12,10 @@ import com.atomicitysystems.Actions.PerformOperation;
 public class MVController {
 	//Another operation
 	@RequestMapping("/OperationApproval")
-	public String showMessage1(@RequestParam(value = "txnNumber") String txnNumber) {
+	public String showMessage1(@RequestParam(value = "txnNumber") String txnNumber, Model model) {
 		System.out.println("in controller with param:" + txnNumber);
 		//ModelAndView mv = new ModelAndView("perform");
-		//mv.addObject("txnNumber", txnNumber);
+		model.addAttribute("txnNumber", txnNumber);
 		return "perform";
 	}
 

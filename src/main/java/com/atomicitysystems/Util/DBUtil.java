@@ -22,7 +22,7 @@ public class DBUtil {
 	private final static Logger LOGGER = Logger.getLogger(DBUtil.class.getName());
 
 	public static void main(String[] args) {
-		LOGGER.info(""+DBUtil.getInstance().openConnectionH2());
+		LOGGER.info(""+DBUtil.getInstance().getConnection());
 		
 	}
 	public String getMappingValueFromDB(String category, String columnName,
@@ -77,7 +77,7 @@ public class DBUtil {
 		}
 		return null;
 	}
-	public Connection getConnection() {
+	/*public Connection getConnection() {
 		Connection conn = null;
 		Context initialContext;
 		try {
@@ -89,8 +89,8 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 		return conn;
-	}
-	public Connection openConnectionH2() {
+	}*/
+	public Connection getConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("org.h2.Driver");
@@ -109,14 +109,14 @@ public class DBUtil {
 		String id = null;
 		try {
 			long myId = 0;
-			Connection conn = DBUtil.getInstance().openConnectionH2();
+			Connection conn = DBUtil.getInstance().getConnection();
 			String sqlIdentifier = "SELECT OAT_TXN_SEQ.NEXTVAL from dual";
 			PreparedStatement pst = conn.prepareStatement(sqlIdentifier);
 			ResultSet rs = pst.executeQuery();
 			if (rs.next()) {
 				myId = rs.getLong(1);
 			}
-			String query = "INSERT into OAT_TXN (TXN_ID,ACTION_ID, SERVER, PARAM1, REQUESTOR, FID ) values (?,?,?, ?, ?,? ) ";
+			String query = "INSERT into OAT_TXN (TXN_ID,ACTION_ID, SERVER, PARAM1, REQUESTOR, FID, TS) values (?,?,?, ?,?,?,sysdate )";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setLong(1, myId);
 			ps.setString(2, hm.get(Constants.action));

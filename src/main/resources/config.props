@@ -1,11 +1,15 @@
 #URL where this app is saved
 baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
+
 #Options for below home or absolute
 baseLocation=home
 
-#Output files
-output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
+#If the above is home, this will get appended to system.home, else this will be used as absolute path
 share_location=/oat/shared/
+
+
+#Output files link for the email
+output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
 
 #Accept and reject URLs
 accept_url=OperationApproval
@@ -14,6 +18,7 @@ reject_url=OperationReject
 #Emails
 from_DL=opsauto3@gmail.com
 bcc_DL=opsauto3@gmail.com
+
 #Don't delete the below, this can be used when org wide email is used
 emailPostFix=
 

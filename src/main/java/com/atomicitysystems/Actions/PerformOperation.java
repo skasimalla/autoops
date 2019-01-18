@@ -43,7 +43,7 @@ public class PerformOperation {
 		String type = allRequestParams.get(Constants.type);
 		String token = allRequestParams.get(Constants.token);
 		String fid = allRequestParams.get(Constants.fid);
-		Connection conn = DBUtil.getInstance().openConnectionH2();
+		Connection conn = DBUtil.getInstance().getConnection();
 		try {
 			LOGGER.info("Connection check " + conn.isClosed() + conn.isValid(10));
 		} catch (SQLException e1) {

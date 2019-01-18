@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>COAT</title>
@@ -26,13 +26,14 @@ var c = querySt("txnNumber");
 		<h2>Operations Automation Tool</h2>
 		<form action="PerformOperation" class="form-group form-control">
 			
-			 <label class="control-label col-sm-2" for="email">Transaction ID:</label>
+			 <label class="control-label" for="email">Transaction ID:</label>
 			 <div class="col-sm-10">
-			<input type="text" class="form-control" id="txnNumberID" name="txnNumber" >
+			<input type="text" class="form-control" id="txnNumberID" name="txnNumber" th:value="${txnNumber}">
 			</div>
-			<script>document.getElementById('txnNumberID').value = c;</script>
-			 <br> <br> Username:<input type="text" name="userName">
-			<br> <br> Password:<input type="text" name="password">
+		<!-- 	<script>document.getElementById('txnNumberID').value = c;</script>
+		 -->	 
+		 	<br> <br> Username:<input type="text" name="userName">
+			<br> <br> Password:<input type="password" name="password">
 
 			<br> <br> Type: <input list="sl" name="type">
 			<datalist id="sl">

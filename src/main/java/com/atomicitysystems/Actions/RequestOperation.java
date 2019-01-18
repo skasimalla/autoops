@@ -46,7 +46,7 @@ public class RequestOperation {
 			// Even though it is inefficient- planning to construct the command here- this
 			// is MORE auditable
 			// ONLY passwords will be encrypted
-			Connection conn = DBUtil.getInstance().openConnectionH2();
+			Connection conn = DBUtil.getInstance().getConnection();
 			String command = DBUtil.getInstance().getMappingValueFromDB("Action", parameterMap.get(Constants.action),
 					conn);
 			for (String key : preParameterMap.keySet()) {
