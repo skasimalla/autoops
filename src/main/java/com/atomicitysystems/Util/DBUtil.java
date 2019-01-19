@@ -116,7 +116,7 @@ public class DBUtil {
 			if (rs.next()) {
 				myId = rs.getLong(1);
 			}
-			String query = "INSERT into OAT_TXN (TXN_ID,ACTION_ID, SERVER, PARAM1, REQUESTOR, FID, TS) values (?,?,?, ?,?,?,sysdate )";
+			String query = "INSERT into OAT_TXN (TXN_ID, ACTION_ID, SERVER, PARAM1, REQUESTOR, FID, TS) values (?,?,?,?,?,?,sysdate )";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setLong(1, myId);
 			ps.setString(2, hm.get(Constants.action));
