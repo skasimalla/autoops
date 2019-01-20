@@ -18,6 +18,7 @@ public class FileUtil {
 		}
 		return o;
 	}
+
 	private final static Logger LOGGER = Logger.getLogger(FileUtil.class.getName());
 
 	public static void main(String[] args) {
@@ -26,7 +27,6 @@ public class FileUtil {
 
 	public String readFile(String fileName) {
 		InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
-
 		StringWriter writer = new StringWriter();
 		try {
 			IOUtils.copy(is, writer, "UTF-8");
@@ -35,17 +35,14 @@ public class FileUtil {
 			e.printStackTrace();
 		}
 		String theString = writer.toString();
-		
 		return theString;
-		
-}
+	}
 
 	public String getProp(String propName) {
 		//String path = System.getProperty("user.home") + "/" + Constants.appBaseFolder + "/" + Constants.propsFile;
 		//LOGGER.info(path);
 		Properties prop = new Properties();
 		InputStream is = null;
-		
 		try {
 			//is = new FileInputStream(path);
 			is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
@@ -79,5 +76,12 @@ public class FileUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public String getBaseLocation() {
+		if (FileUtil.getInstance().getProp("baseLocation").equals("home"))
+			return System.getProperty("user.home") + FileUtil.getInstance().getProp("share_location");
+		else
+			return FileUtil.getInstance().getProp("share_location");
 	}
 }

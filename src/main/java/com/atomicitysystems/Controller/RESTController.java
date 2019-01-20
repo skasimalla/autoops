@@ -1,13 +1,19 @@
 package com.atomicitysystems.Controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.atomicitysystems.Actions.RequestOperation;
 import com.atomicitysystems.DAO.Mapping;
@@ -19,18 +25,13 @@ import com.atomicitysystems.Util.StringUtil;
 
 @RestController
 public class RESTController {
-	
 	@RequestMapping("/register")
-	public String register(
-			@RequestParam(value = "name") String name,
-			@RequestParam(value = "email") String email) {
-		
-		String link = "http://"+FileUtil.getInstance().getProp("baseLink")+"verifyEmail?email="+email+"&key="+OneWayHash.oneWayHash(email);
-		
+	public String register(@RequestParam(value = "name") String name, @RequestParam(value = "email") String email) {
+		String link = "http://" + FileUtil.getInstance().getProp("baseLink") + "verifyEmail?email=" + email + "&key="
+				+ OneWayHash.oneWayHash(email);
 		//check if email is valid
-		String str="Please DON'T click this link if you did not initiate SafelyOps registration";
-		str+="<br>"+link;
-		
+		String str = "Please DON'T click this link if you did not initiate SafelyOps registration";
+		str += "<br>" + link;
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.put("from", FileUtil.getInstance().getProp("from_DL"));
 		hm.put("to", email);
@@ -39,25 +40,19 @@ public class RESTController {
 		hm.put("subject", "SafelyOps: Confirm your registration");
 		hm.put("filePath", "");
 		hm.put("htmlString", str);
-
 		new SendMail(hm).sendEmail();
-		
 		return "true";
 	}
 
 	@RequestMapping("/verifyEmail")
-	public String verifyEmail(
-			@RequestParam(value = "key") String key,
-			@RequestParam(value = "email") String email) {
+	public String verifyEmail(@RequestParam(value = "key") String key, @RequestParam(value = "email") String email) {
 		System.out.println("Invoked verifyEmail");
-		
-		if(key.equals(OneWayHash.oneWayHash(email))) {
+		if (key.equals(OneWayHash.oneWayHash(email))) {
 			return "true";
 		}
 		return "false";
 	}
-	
-	
+
 	//Change this method to accept Hash directly from UI, to make it more secure
 	@RequestMapping("/authenticate")
 	public boolean authenticate(@RequestParam(value = "userid", defaultValue = "none") String userid,
@@ -107,7 +102,28 @@ public class RESTController {
 		String txnNumber = RequestOperation.getInstance().requestHandler(allRequestParams);
 		return "{\"txnNumber\":" + txnNumber + "}";
 	}
-	
-	
-	
+
+	@RequestMapping(value = "/serve/{id}")
+	@ResponseBody
+	public String serve(@PathVariable("id") String id) {
+		BufferedReader br;
+		StringBuffer sb = new StringBuffer();
+		
+		try {
+			br = new BufferedReader(new FileReader(FileUtil.getInstance().getBaseLocation()+id));
+			String line = null;
+			sb.append("The file name requested is" + id);
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+				sb.append(line+"<br>");
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return  sb.toString() ;
+	}
 }

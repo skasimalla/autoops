@@ -31,10 +31,7 @@ public class PerformOperation {
 		String output_folder = FileUtil.getInstance().getProp("output_folder");
 		String share_location = "";
 		
-		if(FileUtil.getInstance().getProp("baseLocation").equals("home"))
-			share_location= System.getProperty("user.home") + FileUtil.getInstance().getProp("share_location");
-		else if (FileUtil.getInstance().getProp("baseLocation").equals("home"))
-			share_location= FileUtil.getInstance().getProp("share_location");
+			share_location= FileUtil.getInstance().getBaseLocation();
 			
 		
 		String user = allRequestParams.get(Constants.userName);

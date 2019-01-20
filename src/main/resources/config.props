@@ -9,7 +9,7 @@ share_location=/oat/shared/
 
 
 #Output files link for the email
-output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8000/
+output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8090/serve/
 
 #Accept and reject URLs
 accept_url=OperationApproval
