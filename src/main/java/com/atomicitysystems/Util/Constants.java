@@ -37,5 +37,4 @@ public class Constants {
 	public static String RequestReceived = "RequestReceived";
 	public static String RequestCompleted = "RequestCompleted";
 	public static String propsFile = "config.props";
-	public static String appBaseFolder = "oat";
 }

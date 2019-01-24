@@ -1,6 +1,7 @@
 package com.atomicitysystems.Util;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -44,8 +45,8 @@ public class FileUtil {
 		Properties prop = new Properties();
 		InputStream is = null;
 		try {
-			//is = new FileInputStream(path);
-			is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
+			is = new FileInputStream(Constants.propsFile);
+			//is = getClass().getClassLoader().getResourceAsStream(Constants.propsFile);
 			prop.load(is);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

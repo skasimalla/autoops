@@ -31,8 +31,7 @@ public class PerformOperation {
 		String output_folder = FileUtil.getInstance().getProp("output_folder");
 		String share_location = "";
 		
-			share_location= FileUtil.getInstance().getBaseLocation();
-			
+		share_location= FileUtil.getInstance().getBaseLocation();
 		
 		String user = allRequestParams.get(Constants.userName);
 		String passwd = allRequestParams.get(Constants.password);
@@ -41,6 +40,8 @@ public class PerformOperation {
 		String token = allRequestParams.get(Constants.token);
 		String fid = allRequestParams.get(Constants.fid);
 		Connection conn = DBUtil.getInstance().getConnection();
+		DBUtil.getInstance().updateTxn(txnNumber, "APPROVED");
+		
 		try {
 			LOGGER.info("Connection check " + conn.isClosed() + conn.isValid(10));
 		} catch (SQLException e1) {

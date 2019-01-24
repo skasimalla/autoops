@@ -133,5 +133,20 @@ public class DBUtil {
 		return id;
 	}
 
+	public boolean updateTxn(String txnNumber, String status) {
+		try {
+			Connection conn = DBUtil.getInstance().getConnection();
+			String query = "UPDATE OAT_TXN t set status=(select status from OAT_TXN where TXN_ID=t.TXN_ID)||sysdate||':"+status+";',TS_LASTUPDATE=sysdate where TXN_ID=?";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, txnNumber);
+			LOGGER.info("Output" + ps.executeUpdate());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
 	
 }

@@ -1,5 +1,7 @@
 package com.atomicitysystems.Util;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -21,7 +23,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class SendMail {
-
 	public String from;
 	public String to;
 	public String cc;
@@ -29,16 +30,12 @@ public class SendMail {
 	public String subject;
 	public String htmlString;
 	public String filePath;
-	
 	private final static Logger LOGGER = Logger.getLogger(SendMail.class.getName());
 
 	public static void main(String[] args) {
 		String[] a = { "opsauto3@gmail.com", "sunnybond49@gmail.com", "", "", "Subject", "", "Body" };
-
 		args = a;
-
 		if (args.length == 7) {
-
 			HashMap<String, String> hm = new HashMap<String, String>();
 			hm.put("from", args[0]);
 			hm.put("to", args[1]);
@@ -47,13 +44,11 @@ public class SendMail {
 			hm.put("subject", args[4]);
 			hm.put("filePath", args[5]);
 			hm.put("htmlString", args[6]);
-
 			new SendMail(hm).sendEmail();
 		} else {
 			LOGGER.info("Insufficient Arguments.the arguement should have 1.from Address 2.to Address");
 			LOGGER.info("3.cc 4. bcc 5.subject 6.Absolute File Path 7.body content");
 		}
-
 	}
 
 	public SendMail(HashMap<String, String> hm) {
@@ -76,7 +71,6 @@ public class SendMail {
 			message.setFrom(new InternetAddress(from, "SafelyOps"));
 			message.setReplyTo(InternetAddress.parse(from, false));
 			message.setSubject(subject, "UTF-8");
-
 			InternetAddress[] recipients = recepientAddresses(to);
 			message.setRecipients(Message.RecipientType.TO, recipients);
 			LOGGER.info("CC value:" + cc.length());
@@ -103,9 +97,7 @@ public class SendMail {
 			// messageBodyPart.setFileName(filename);
 			// rootBodypart.addBodyPart(messageBodyPart);
 			// }
-
 			message.setContent(rootBodypart);
-			
 			Transport.send(message);
 			LOGGER.info("EMail sent Successfully !!");
 		} catch (MessagingException e) {
@@ -117,47 +109,38 @@ public class SendMail {
 	}
 
 	private Session mailcredentials() {
-		
 		Properties props = new Properties();
-		InputStream inputStream = 
-		    getClass().getClassLoader().getResourceAsStream("mail.props");
+		InputStream inputStream;
 		try {
+			inputStream = new FileInputStream("mail.props");
+			//		    getClass().getClassLoader().getResourceAsStream("mail.props");
 			props.load(inputStream);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		String user=props.getProperty("mail.smtp.user");
-		String password=props.getProperty("mail.smtp.password");
-		
+		String user = props.getProperty("mail.smtp.user");
+		String password = props.getProperty("mail.smtp.password");
 		Authenticator pass = new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(user,password);
+				return new PasswordAuthentication(user, password);
 			}
-		  };
-		  
+		};
 		Session session = Session.getInstance(props, pass);
-	
-		
 		return session;
 	}
 
 	public InternetAddress[] recepientAddresses(String recipients) throws AddressException {
-		
-		if(recipients==null)
+		if (recipients == null)
 			System.out.println("No recipient specified");
-		
 		String[] recipientList = recipients.split(",");
 		InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
 		int counter = 0;
 		for (String recipient : recipientList) {
 			recipientAddress[counter] = new InternetAddress(recipient.trim());
-
 			counter++;
 			LOGGER.info("recipientAddress" + recipientList);
 		}
 		return recipientAddress;
 	}
-
 }
