@@ -112,7 +112,7 @@ public class SendMail {
 		Properties props = new Properties();
 		InputStream inputStream;
 		try {
-			inputStream = new FileInputStream("mail.props");
+			inputStream = new FileInputStream(Constants.mailFile);
 			//		    getClass().getClassLoader().getResourceAsStream("mail.props");
 			props.load(inputStream);
 		} catch (IOException e) {

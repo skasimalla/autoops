@@ -36,5 +36,6 @@ public class Constants {
 	public static String REQUESTOR = "REQUESTOR";
 	public static String RequestReceived = "RequestReceived";
 	public static String RequestCompleted = "RequestCompleted";
-	public static String propsFile = "config.props";
+	public static String propsFile = "conf/config.props";
+	public static String mailFile = "conf/mail.props";
 }
