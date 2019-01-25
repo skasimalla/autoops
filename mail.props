@@ -1,7 +1,0 @@
-mail.smtp.starttls.enable=true
-mail.smtp.auth=true
-mail.smtp.port=587
-mail.smtp.host=smtp.gmail.com
-
-mail.smtp.user=opsauto3@gmail.com 
-mail.smtp.password=Sunny@123
