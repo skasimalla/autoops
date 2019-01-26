@@ -27,15 +27,19 @@ public class FileUtil {
 	}
 
 	public String readFile(String fileName) {
-		InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
-		StringWriter writer = new StringWriter();
+		//InputStream is = getClass().getClassLoader().getResourceAsStream(fileName);
+		String theString="" ;
 		try {
+		InputStream is = new FileInputStream(new File(fileName));
+		StringWriter writer = new StringWriter();
+		
 			IOUtils.copy(is, writer, "UTF-8");
+		theString = writer.toString();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String theString = writer.toString();
+	
 		return theString;
 	}
 
