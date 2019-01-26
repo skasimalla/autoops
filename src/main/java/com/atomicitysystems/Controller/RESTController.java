@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.atomicitysystems.Actions.PerformOperation;
 import com.atomicitysystems.Actions.RequestOperation;
 import com.atomicitysystems.DAO.Mapping;
 import com.atomicitysystems.Util.DBUtil;
@@ -125,5 +126,14 @@ public class RESTController {
 			e.printStackTrace();
 		}
 		return  sb.toString() ;
+	}
+	
+	@RequestMapping("/PerformOperation")
+	public String x(@RequestParam Map<String, String> allRequestParams) {
+		System.out.println(allRequestParams.toString());
+		String txnNumber = PerformOperation.getInstance().performRequest(allRequestParams);
+		//ModelAndView mv = new ModelAndView("status2");
+		//mv.addObject("txnNumber", txnNumber);
+		return "{\"txnNumber\",\""+txnNumber+"\"}";
 	}
 }

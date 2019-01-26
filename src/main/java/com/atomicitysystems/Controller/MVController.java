@@ -27,12 +27,5 @@ public class MVController {
 		return mv;
 	}
 
-	@RequestMapping("/PerformOperation")
-	public String x(@RequestParam Map<String, String> allRequestParams) {
-		System.out.println(allRequestParams.toString());
-		String txnNumber = PerformOperation.getInstance().performRequest(allRequestParams);
-		//ModelAndView mv = new ModelAndView("status2");
-		//mv.addObject("txnNumber", txnNumber);
-		return "{\"txnNumber\",\""+txnNumber+"\"}";
-	}
+
 }
