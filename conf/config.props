@@ -1,10 +1,7 @@
 #URL where this app is saved
-#baseLink=http://atomicitysystems.eastus.cloudapp.azure.com:8090/
 baseLink=http://localhost:8090/
 #Output files link for the email
-output_folder=http://atomicitysystems.eastus.cloudapp.azure.com:8090/serve/
-
-angular.dist=dist
+output_folder=http://localhost:8090/serve/
 
 #Options for below home or absolute
 baseLocation=home

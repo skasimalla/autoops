@@ -58,6 +58,6 @@ public class PerformOperation {
 		FileUtil.getInstance().writeToFile(share_location, txnNumber, result);
 		// Finished writing
 		StringUtil.getInstance().sendEmailWrapper(hm, conn);
-		return txnNumber;
+		return txnNumber+"is Successful";
 	}
 }

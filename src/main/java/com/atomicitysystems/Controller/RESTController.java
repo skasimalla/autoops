@@ -131,9 +131,9 @@ public class RESTController {
 	@RequestMapping("/PerformOperation")
 	public String x(@RequestParam Map<String, String> allRequestParams) {
 		System.out.println(allRequestParams.toString());
-		String txnNumber = PerformOperation.getInstance().performRequest(allRequestParams);
+		String status = PerformOperation.getInstance().performRequest(allRequestParams);
 		//ModelAndView mv = new ModelAndView("status2");
 		//mv.addObject("txnNumber", txnNumber);
-		return "{\"txnNumber\",\""+txnNumber+"\"}";
+		return "{\"status\":\""+status+"\"}";
 	}
 }
