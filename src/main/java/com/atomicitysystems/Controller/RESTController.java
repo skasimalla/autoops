@@ -45,14 +45,7 @@ public class RESTController {
 		return "true";
 	}
 
-	@RequestMapping("/verifyEmail")
-	public String verifyEmail(@RequestParam(value = "key") String key, @RequestParam(value = "email") String email) {
-		System.out.println("Invoked verifyEmail");
-		if (key.equals(OneWayHash.oneWayHash(email))) {
-			return "true";
-		}
-		return "false";
-	}
+
 
 	//Change this method to accept Hash directly from UI, to make it more secure
 	@RequestMapping("/authenticate")
@@ -99,8 +92,12 @@ public class RESTController {
 
 	@RequestMapping(value = ("/RequestAnOperation"), method = RequestMethod.GET)
 	public String search(@RequestParam Map<String, String> allRequestParams) {
-		System.out.println("allRequestParams" + allRequestParams.toString());
-		String txnNumber = RequestOperation.getInstance().requestHandler(allRequestParams);
+		String txnNumber;
+		if (DBUtil.getInstance().getTxnCount() >= 150) {
+			System.out.println("allRequestParams" + allRequestParams.toString());
+			txnNumber = RequestOperation.getInstance().requestHandler(allRequestParams);
+		} else
+			txnNumber = "0";
 		return "{\"txnNumber\":" + txnNumber + "}";
 	}
 
@@ -109,14 +106,13 @@ public class RESTController {
 	public String serve(@PathVariable("id") String id) {
 		BufferedReader br;
 		StringBuffer sb = new StringBuffer();
-		
 		try {
-			br = new BufferedReader(new FileReader(FileUtil.getInstance().getBaseLocation()+id));
+			br = new BufferedReader(new FileReader(FileUtil.getInstance().getBaseLocation() + id));
 			String line = null;
 			sb.append("The file name requested is" + id);
 			while ((line = br.readLine()) != null) {
 				System.out.println(line);
-				sb.append(line+"<br>");
+				sb.append(line + "<br>");
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -125,15 +121,15 @@ public class RESTController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return  sb.toString() ;
+		return sb.toString();
 	}
-	
+
 	@RequestMapping("/PerformOperation")
 	public String x(@RequestParam Map<String, String> allRequestParams) {
 		System.out.println(allRequestParams.toString());
 		String status = PerformOperation.getInstance().performRequest(allRequestParams);
 		//ModelAndView mv = new ModelAndView("status2");
 		//mv.addObject("txnNumber", txnNumber);
-		return "{\"status\":\""+status+"\"}";
+		return "{\"status\":\"" + status + "\"}";
 	}
 }
