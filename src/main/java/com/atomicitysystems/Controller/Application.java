@@ -14,8 +14,9 @@ public class Application {
 		try {
 			ip = InetAddress.getLocalHost();
 			String s = ip.getCanonicalHostName() + "AtomicitySystems";
+			System.out.println("Starting on" + s);
 			s = OneWayHash.oneWayHash(s);
-			String key=FileUtil.getInstance().getProp("key");
+			String key = FileUtil.getInstance().getProp("key");
 			if (s.equals(key))
 				SpringApplication.run(Application.class, args);
 			else
