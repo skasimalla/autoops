@@ -4,10 +4,10 @@ baseLink=http://localhost:8090/
 output_folder=http://localhost:8090/serve/
 
 #Options for below home or absolute
-baseLocation=home
+baseLocation=absolute
 
 #If the above is home, this will get appended to system.home, else this will be used as absolute path
-share_location=/oat/shared/
+share_location=serve/
 
 #Accept and reject URLs
 accept_url=OperationApproval
@@ -21,7 +21,7 @@ bcc_DL=opsauto3@gmail.com
 emailPostFix=
 
 #JDBC connection
-jdbc_connection_string=jdbc:h2:tcp://localhost/~/oat/oat;USER=oat;PASSWORD=123456
+jdbc_connection_string=jdbc:h2:tcp://localhost:9092/./db/oat;IFEXISTS=TRUE;USER=oat;PASSWORD=123456
 
 #Key
 key=nn0Z1yL9dRJ5zS+yH+tsb8rxuJM665Uu14Qi5t3MTes=

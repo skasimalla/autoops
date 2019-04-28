@@ -1,7 +1,7 @@
 package com.atomicitysystems.Util;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -22,7 +22,10 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+
 public class SendMail {
+	private final static Logger LOGGER = Logger.getLogger(SendMail.class.getName());
+
 	public String from;
 	public String to;
 	public String cc;
@@ -30,7 +33,6 @@ public class SendMail {
 	public String subject;
 	public String htmlString;
 	public String filePath;
-	private final static Logger LOGGER = Logger.getLogger(SendMail.class.getName());
 
 	public static void main(String[] args) {
 		String[] a = { "opsauto3@gmail.com", "sunnybond49@gmail.com", "", "", "Subject", "", "Body" };
@@ -82,6 +84,7 @@ public class SendMail {
 				message.addRecipients(Message.RecipientType.BCC, bcc);
 			}
 			String body = htmlString;
+			LOGGER.fine(body);
 			// htmlmessageBodyPart.setContent(body, "text/html");
 			Multipart multiContentMultipart = new MimeMultipart("alternative");
 			Multipart rootBodypart = new MimeMultipart("related");
@@ -132,7 +135,7 @@ public class SendMail {
 
 	public InternetAddress[] recepientAddresses(String recipients) throws AddressException {
 		if (recipients == null)
-			System.out.println("No recipient specified");
+			LOGGER.fine("No recipient specified");
 		String[] recipientList = recipients.split(",");
 		InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
 		int counter = 0;

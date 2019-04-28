@@ -1,5 +1,6 @@
 package com.atomicitysystems.Controller;
 
+import java.util.logging.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +11,12 @@ import com.atomicitysystems.Util.OneWayHash;
 
 @Controller
 public class MVController {
+	private final static Logger LOGGER = Logger.getLogger(MVController.class.getName());
+
 	//Another operation
 	@RequestMapping("/OperationApproval")
 	public String showMessage1(@RequestParam(value = "txnNumber") String txnNumber, Model model) {
-		System.out.println("in controller with param:" + txnNumber);
+		LOGGER.fine("in controller with param:" + txnNumber);
 		//ModelAndView mv = new ModelAndView("perform");
 		model.addAttribute("txnNumber", txnNumber);
 		return "perform";
@@ -21,7 +24,7 @@ public class MVController {
 
 	@RequestMapping("/OperationReject")
 	public ModelAndView showMessage2(@RequestParam(value = "txnNumber") String txnNumber) {
-		System.out.println("In controller with param:" + txnNumber);
+		LOGGER.fine("In controller with param:" + txnNumber);
 		ModelAndView mv = new ModelAndView("reject");
 		mv.addObject("txnNumber", txnNumber);
 		return mv;
@@ -30,7 +33,7 @@ public class MVController {
 	@RequestMapping("/verifyEmail")
 	public ModelAndView verifyEmail(@RequestParam(value = "key") String key,
 			@RequestParam(value = "email") String email) {
-		System.out.println("Invoked verifyEmail");
+		LOGGER.fine("Invoked verifyEmail");
 		ModelAndView mv;
 		if (key.equals(OneWayHash.oneWayHash(email))) {
 			mv = new ModelAndView("password");
@@ -46,7 +49,7 @@ public class MVController {
 	public ModelAndView setPassword(@RequestParam(value = "email") String email,
 			@RequestParam(value = "password") String password,
 			@RequestParam(value = "copypassword") String copypassword) {
-		System.out.println("Invoked setPassword");
+		LOGGER.fine("Invoked setPassword");
 		ModelAndView mv = null;
 		if (password.equals(copypassword)) {
 			

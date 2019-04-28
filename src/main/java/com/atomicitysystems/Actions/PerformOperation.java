@@ -1,5 +1,6 @@
 package com.atomicitysystems.Actions;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import com.atomicitysystems.Util.DBUtil;
 import com.atomicitysystems.Util.FileUtil;
 import com.atomicitysystems.Util.JSSH2Shell;
 import com.atomicitysystems.Util.StringUtil;
+import com.jcraft.jsch.JSchException;
 
 public class PerformOperation {
 	public static PerformOperation x;
@@ -27,7 +29,7 @@ public class PerformOperation {
 		LOGGER.info(FileUtil.getInstance().getProp("from_DL"));
 	}
 
-	public String performRequest(Map<String, String> allRequestParams) {
+	public String performRequest(Map<String, String> allRequestParams) throws JSchException, IOException, InterruptedException {
 		String output_folder = FileUtil.getInstance().getProp("output_folder");
 		String share_location = "";
 		

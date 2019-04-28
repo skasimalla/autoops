@@ -1,0 +1,85 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.5.RELEASE)
+
+2019-04-28 16:15:10.044  INFO 8280 --- [           main] c.a.Controller.Application               : Starting Application v0.1.0 on DESKTOP-4MED7M4 with PID 8280 (C:\Users\Sunny\eclipse-workspace\oat3\deployable\autoops\gs-rest-service-0.1.0.jar started by Sunny in C:\Users\Sunny\eclipse-workspace\oat3\deployable\autoops)
+2019-04-28 16:15:10.059  INFO 8280 --- [           main] c.a.Controller.Application               : No active profile set, falling back to default profiles: default
+2019-04-28 16:15:10.169  INFO 8280 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3419866c: startup date [Sun Apr 28 16:15:10 EDT 2019]; root of context hierarchy
+2019-04-28 16:15:13.378  INFO 8280 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2019-04-28 16:15:13.441  INFO 8280 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:15:13.441  INFO 8280 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-04-28 16:15:13.456  INFO 8280 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\Sunny\Installations\jdk1.8.0_144\jdk1.8.0_144\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Sunny\Installations\jdk1.8.0_144\jdk1.8.0_144\jre\bin;C:\Users\Sunny\Installations\apache-maven-3.5.4\bin;C:\Users\Sunny\Installations\NodeJS;C:\Users\Sunny\AppData\Local\Microsoft\WindowsApps;;.]
+2019-04-28 16:15:13.675  INFO 8280 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:15:13.691  INFO 8280 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3522 ms
+2019-04-28 16:15:13.816  INFO 8280 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-04-28 16:15:13.831  INFO 8280 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-04-28 16:15:13.831  INFO 8280 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-04-28 16:15:13.831  INFO 8280 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-04-28 16:15:13.831  INFO 8280 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-04-28 16:15:14.864  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/OperationApproval]}" onto public java.lang.String com.atomicitysystems.Controller.MVController.showMessage1(java.lang.String,org.springframework.ui.Model)
+2019-04-28 16:15:14.864  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/OperationReject]}" onto public org.springframework.web.servlet.ModelAndView com.atomicitysystems.Controller.MVController.showMessage2(java.lang.String)
+2019-04-28 16:15:14.864  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/verifyEmail]}" onto public org.springframework.web.servlet.ModelAndView com.atomicitysystems.Controller.MVController.verifyEmail(java.lang.String,java.lang.String)
+2019-04-28 16:15:14.864  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/setPassword]}" onto public org.springframework.web.servlet.ModelAndView com.atomicitysystems.Controller.MVController.setPassword(java.lang.String,java.lang.String,java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register]}" onto public java.lang.String com.atomicitysystems.Controller.RESTController.register(java.lang.String,java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/RequestAnOperation],methods=[GET]}" onto public java.lang.String com.atomicitysystems.Controller.RESTController.search(java.util.Map<java.lang.String, java.lang.String>)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/PerformOperation]}" onto public java.lang.String com.atomicitysystems.Controller.RESTController.x(java.util.Map<java.lang.String, java.lang.String>)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authenticate]}" onto public boolean com.atomicitysystems.Controller.RESTController.authenticate(java.lang.String,java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/form]}" onto public java.util.List<com.atomicitysystems.DAO.Mapping> com.atomicitysystems.Controller.RESTController.showMessage(java.lang.String,java.lang.String,java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/commandList]}" onto public java.util.List<com.atomicitysystems.DAO.Mapping> com.atomicitysystems.Controller.RESTController.commandList(java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/serve/{id}]}" onto public java.lang.String com.atomicitysystems.Controller.RESTController.serve(java.lang.String)
+2019-04-28 16:15:14.879  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getList]}" onto public java.util.List<com.atomicitysystems.DAO.Mapping> com.atomicitysystems.Controller.RESTController.getList(java.lang.String)
+2019-04-28 16:15:14.895  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-04-28 16:15:14.895  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-04-28 16:15:14.895  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-04-28 16:15:14.911  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-04-28 16:15:14.911  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-04-28 16:15:15.421  INFO 8280 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-04-28 16:15:15.609  INFO 8280 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-28 16:15:15.890  INFO 8280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3419866c: startup date [Sun Apr 28 16:15:10 EDT 2019]; root of context hierarchy
+2019-04-28 16:15:16.015  INFO 8280 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-28 16:15:16.015  INFO 8280 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-28 16:15:16.250  INFO 8280 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2019-04-28 16:15:16.453  INFO 8280 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-04-28 16:15:16.468  INFO 8280 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-04-28 16:15:16.468  INFO 8280 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-04-28 16:15:16.656  INFO 8280 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-04-28 16:15:16.750  INFO 8280 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-04-28 16:15:17.422  INFO 8280 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2019-04-28 16:15:17.422  INFO 8280 --- [           main] c.a.Controller.Application               : Started Application in 8.113 seconds (JVM running for 9.039)
+2019-04-28 16:15:30.944  INFO 8280 --- [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-04-28 16:15:30.944  INFO 8280 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-04-28 16:15:30.975  INFO 8280 --- [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+2019-04-28 16:16:38.190  INFO 8280 --- [nio-8090-exec-6] com.atomicitysystems.Util.StringUtil     : S is ls -lrt ${text:Path}
+2019-04-28 16:16:38.190  INFO 8280 --- [nio-8090-exec-6] com.atomicitysystems.Util.StringUtil     : returnTokens[text:Path]
+2019-04-28 16:16:41.134  INFO 8280 --- [nio-8090-exec-7] com.atomicitysystems.Util.DBUtil         : Output1
+2019-04-28 16:16:41.246  INFO 8280 --- [nio-8090-exec-7] com.atomicitysystems.Util.SendMail       : recipientAddress[Ljava.lang.String;@bea7e79
+2019-04-28 16:16:41.247  INFO 8280 --- [nio-8090-exec-7] com.atomicitysystems.Util.SendMail       : CC value:0
+2019-04-28 16:16:44.004  INFO 8280 --- [nio-8090-exec-7] com.atomicitysystems.Util.SendMail       : EMail sent Successfully !!
+2019-04-28 16:17:52.757  INFO 8280 --- [nio-8090-exec-1] com.atomicitysystems.Util.DBUtil         : Output1
+2019-04-28 16:17:52.757  INFO 8280 --- [nio-8090-exec-1] c.a.Actions.PerformOperation             : Connection check falsetrue
+Last login: Sun Apr 28 20:08:20 2019 from 35.138.2.204
+[serviceacct1@instance-1 ~]$ whoami
+serviceacct1
+[serviceacct1@instance-1 ~]$ ls -lrt /tmp
+total 440
+drwx------. 3 root root    17 Dec 18 23:49 [0m[01;34msystemd-private-937b82abc8f54a878776b064f9d4b229-chronyd.service-QsApXS[0m[K
+-rw-------. 1 root root 38909 Apr 18 08:57 yum_save_tx.2019-04-18.08-57.eVlKgg.yumtx
+-rw-------. 1 root root 38909 Apr 19 04:38 yum_save_tx.2019-04-19.04-38.ErCPeM.yumtx
+-rw-------. 1 root root 38909 Apr 20 07:52 yum_save_tx.2019-04-20.07-52.LA9kXR.yumtx
+-rw-------. 1 root root 38909 Apr 21 03:47 yum_save_tx.2019-04-21.03-47.dMike3.yumtx
+-rw-------. 1 root root 38909 Apr 22 08:06 yum_save_tx.2019-04-22.08-06.PMA98d.yumtx
+-rw-------. 1 root root 38909 Apr 23 04:38 yum_save_tx.2019-04-23.04-38.L36oXQ.yumtx
+-rw-------. 1 root root 38909 Apr 24 08:19 yum_save_tx.2019-04-24.08-19.ktQiAW.yumtx
+-rw-------. 1 root root 38909 Apr 25 09:13 yum_save_tx.2019-04-25.09-13.paY47r.yumtx
+-rw-------. 1 root root 38909 Apr 26 08:12 yum_save_tx.2019-04-26.08-12.1zicCP.yumtx
+-rw-------. 1 root root 38909 Apr 27 06:18 yum_save_tx.2019-04-27.06-18.qLawgL.yumtx
+-rw-------. 1 root root 38909 Apr 28 03:51 yum_save_tx.2019-04-28.03-51.rcp4LV.yumtx
+[serviceacct1@instance-1 ~]$2019-04-28 16:17:58.887  INFO 8280 --- [nio-8090-exec-1] com.atomicitysystems.Util.FileUtil       : Writing to fileserve/100403.txt
+2019-04-28 16:17:58.917  INFO 8280 --- [nio-8090-exec-1] com.atomicitysystems.Util.SendMail       : recipientAddress[Ljava.lang.String;@57910c81
+2019-04-28 16:17:58.917  INFO 8280 --- [nio-8090-exec-1] com.atomicitysystems.Util.SendMail       : CC value:0
+2019-04-28 16:18:00.529  INFO 8280 --- [nio-8090-exec-1] com.atomicitysystems.Util.SendMail       : EMail sent Successfully !!

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,10 +24,14 @@ import com.atomicitysystems.Util.FileUtil;
 import com.atomicitysystems.Util.OneWayHash;
 import com.atomicitysystems.Util.SendMail;
 import com.atomicitysystems.Util.StringUtil;
+import com.jcraft.jsch.JSchException;
 
 @RestController
 public class RESTController {
+	private final static Logger LOGGER = Logger.getLogger(RESTController.class.getName());
+
 	@RequestMapping("/register")
+	
 	public String register(@RequestParam(value = "name") String name, @RequestParam(value = "email") String email) {
 		String link = "http://" + FileUtil.getInstance().getProp("baseLink") + "verifyEmail?email=" + email + "&key="
 				+ OneWayHash.oneWayHash(email);
@@ -93,8 +98,8 @@ public class RESTController {
 	@RequestMapping(value = ("/RequestAnOperation"), method = RequestMethod.GET)
 	public String search(@RequestParam Map<String, String> allRequestParams) {
 		String txnNumber;
-		if (DBUtil.getInstance().getTxnCount() >= 150) {
-			System.out.println("allRequestParams" + allRequestParams.toString());
+		if (DBUtil.getInstance().getTxnCount() < 150) {
+			LOGGER.fine("allRequestParams" + allRequestParams.toString());
 			txnNumber = RequestOperation.getInstance().requestHandler(allRequestParams);
 		} else
 			txnNumber = "0";
@@ -111,7 +116,7 @@ public class RESTController {
 			String line = null;
 			sb.append("The file name requested is" + id);
 			while ((line = br.readLine()) != null) {
-				System.out.println(line);
+				LOGGER.fine(line);
 				sb.append(line + "<br>");
 			}
 		} catch (FileNotFoundException e) {
@@ -126,8 +131,16 @@ public class RESTController {
 
 	@RequestMapping("/PerformOperation")
 	public String x(@RequestParam Map<String, String> allRequestParams) {
-		System.out.println(allRequestParams.toString());
-		String status = PerformOperation.getInstance().performRequest(allRequestParams);
+		//This is printing out the password and hence commenting it
+		//LOGGER.fine(allRequestParams.toString());
+		String status;
+		try {
+			status = PerformOperation.getInstance().performRequest(allRequestParams);
+		} catch (JSchException | IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			status="Error"+e;
+		}
 		//ModelAndView mv = new ModelAndView("status2");
 		//mv.addObject("txnNumber", txnNumber);
 		return "{\"status\":\"" + status + "\"}";

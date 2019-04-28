@@ -18,11 +18,11 @@ public class StringUtil {
 		}
 		return x;
 	}
-
 	private final static Logger LOGGER = Logger.getLogger(StringUtil.class.getName());
 
+
 	public static void main(String args[]) {
-		System.out.println(new StringUtil().returnTokens("List the contents of a folder"));
+		LOGGER.fine(new StringUtil().returnTokens("List the contents of a folder").toString());
 		//new StringUtil().someStringOps("SCP a file from one server to another");
 		
 	}
@@ -64,11 +64,15 @@ public class StringUtil {
 		//String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
 		String filePath = htmlStringPath;
 		String htmlString = FileUtil.getInstance().readFile(filePath);
+		LOGGER.fine("htmlString"+htmlString);
 		String requestor = hm.get(Constants.REQUESTOR);
 		for (String key : hm.keySet()) {
 			subject = subject.replaceAll("\\$\\{" + key + "\\}", hm.get(key));
 			htmlString = htmlString.replaceAll("\\$\\{" + key + "\\}", hm.get(key));
 		}
+		LOGGER.fine("htmlString after replace"+htmlString);
+		
+		
 		hmMail.put(Constants.from, from_DL);
 		hmMail.put(Constants.to, requestor + emailPostFix);
 		hmMail.put(Constants.cc, "");
@@ -79,9 +83,9 @@ public class StringUtil {
 	}
 
 	public List<Mapping> someStringOps(String action) {
-		System.out.println("in controller with param:" + action);
+		LOGGER.fine("in controller with param:" + action);
 		List<String> list = new StringUtil().returnTokens(action);
-		System.out.println("List is "+list);
+		LOGGER.fine("List is "+list);
 		List<Mapping> li = new ArrayList<Mapping>();
 		for (String s : list) {
 			String[] sa = s.split(":");

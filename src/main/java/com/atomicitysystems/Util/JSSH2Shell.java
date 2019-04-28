@@ -1,13 +1,18 @@
 package com.atomicitysystems.Util;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.logging.Logger;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelShell;
 import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
 public class JSSH2Shell {
+	private final static Logger LOGGER = Logger.getLogger(JSSH2Shell.class.getName());
+
 	static Session session;
 	static Channel channel;
 	public static void main(String[] args) {
@@ -16,11 +21,16 @@ public class JSSH2Shell {
 		String host = "192.168.1.9";
 		String passwd = "7777777";
 		String command = "ls -lrt";
-		System.out.println(s1.commandExecutor(host, user, passwd, command, "", "", "root"));
+		try {
+			LOGGER.fine(s1.commandExecutor(host, user, passwd, command, "", "", "root"));
+		} catch (JSchException | IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public String commandExecutor(String host, String user, String passwd, String command, String type, String token,
-			String fid) {
+			String fid) throws JSchException, IOException, InterruptedException {
 		String[] commands;
 		if (type.contains("pbrun -u")) {
 			commands = new String[] { "pbrun -u " + fid + " dap", token, "OAT", passwd, "whoami", command, "whoami" };
@@ -30,12 +40,12 @@ public class JSSH2Shell {
 		return commandExecutor(host, user, passwd, commands);
 	}
 
-	public String commandExecutor(String host, String user, String passwd, String[] commands) {
+	public String commandExecutor(String host, String user, String passwd, String[] commands) throws JSchException, IOException, InterruptedException {
 		StringBuilder sb = new StringBuilder();
 		int port = 22;
 		int i = 0;
 		String c;
-		try {
+		
 			JSch jsch = new JSch();
 			jsch.removeAllIdentity();
 			session = jsch.getSession(user, host, port);
@@ -44,7 +54,7 @@ public class JSSH2Shell {
 			session.setConfig("PubkeyAuthentication", "no");
 			session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
 			session.connect();
-			System.out.println("Establishing Connection...");
+			LOGGER.fine("Establishing Connection...");
 			channel = session.openChannel("shell");
 			channel.connect();
 			((ChannelShell) channel).setPty(true);
@@ -55,10 +65,10 @@ public class JSSH2Shell {
 				int a = in.available();
 				c = Character.toString((char) cn);
 				System.out.print(c);
-				//System.out.Println("~"+a+"~"+cn+";");
+				//LOGGER.fine("~"+a+"~"+cn+";");
 				sb.append(c);
 				if ("$:#".contains(c) && a == 1) {
-					//System.out.Println("hit");
+					//LOGGER.fine("hit");
 					stream.print(commands[i++] + "\n");
 					stream.flush();
 				}
@@ -67,9 +77,7 @@ public class JSSH2Shell {
 			Thread.sleep(1000);
 			channel.disconnect();
 			session.disconnect();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		return sb.toString().replaceAll("\u001B\\[[;\\d]*m", "");
 	}
 }

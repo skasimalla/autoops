@@ -3,6 +3,7 @@ package com.atomicitysystems.Actions;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 import com.atomicitysystems.Util.Constants;
 import com.atomicitysystems.Util.DBUtil;
 import com.atomicitysystems.Util.FileUtil;
@@ -17,6 +18,8 @@ public class RequestOperation {
 		}
 		return x;
 	}
+	
+	private final static Logger LOGGER = Logger.getLogger(RequestOperation.class.getName());
 
 	public static void main(String[] args) {
 	}
@@ -58,10 +61,10 @@ public class RequestOperation {
 				}
 			}
 		
-			System.out.println("Completed command is" + command);
+			LOGGER.fine("Completed command is" + command);
 			parameterMap.put(Constants.param, command);
-			System.out.println("Preparam map is " + preParameterMap.toString());
-			System.out.println("Param map is " + parameterMap.toString());
+			LOGGER.fine("Preparam map is " + preParameterMap.toString());
+			LOGGER.fine("Param map is " + parameterMap.toString());
 			txnNumber = DBUtil.getInstance().saveTxnInDB(parameterMap);
 			parameterMap.put("txnNumber", txnNumber);
 			parameterMap.put(Constants.accept_link, accept_url + "?" + Constants.txnNumber + "=" + txnNumber);
@@ -70,14 +73,14 @@ public class RequestOperation {
 					Constants.RequestReceived, conn);
 			String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,
 					Constants.RequestReceived, conn);
-			/*System.out.println("htmlStringPath is" + htmlStringPath);
+			/*LOGGER.fine("htmlStringPath is" + htmlStringPath);
 			String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
 			*/
 			String htmlString = FileUtil.getInstance().readFile(htmlStringPath);
-			//System.out.println("html str is " + htmlString);
+			//LOGGER.fine("html str is " + htmlString);
 			for (String key : parameterMap.keySet()) {
 				try {
-					System.out.println("Replacing" + key + "with "+parameterMap.get(key));
+					LOGGER.fine("Replacing" + key + "with "+parameterMap.get(key));
 					subject = subject.replaceAll("\\$\\{" + key + "\\}", parameterMap.get(key));
 					htmlString = htmlString.replaceAll("\\$\\{" + key + "\\}", parameterMap.get(key));
 				} catch (Exception e) {
@@ -92,7 +95,7 @@ public class RequestOperation {
 			hmMail.put(Constants.bcc, bcc_DL);
 			hmMail.put(Constants.subject, subject);
 			hmMail.put(Constants.htmlString, htmlString);
-			//System.out.println(hmMail.toString());
+			//LOGGER.fine(hmMail.toString());
 			// SendMailRequest.getInstance().sendMailRequest(hmMail);
 			new SendMail(hmMail).sendEmail();
 		} catch (Exception e) {

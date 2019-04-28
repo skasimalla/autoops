@@ -5,13 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Logger;
-import javax.activation.DataSource;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 
 public class DBUtil {
 	public static DBUtil dbutil;
@@ -79,7 +75,6 @@ public class DBUtil {
 	}
 
 	public boolean addMapping(String category, String columnName,String mappedValue ) {
-		ArrayList<String> li = new ArrayList<String>();
 		try {
 			Connection conn=DBUtil.getInstance().getConnection();
 			String query = "INSERT INTO OAT_MAPPING (CATEGORY, COLUMN_NAME, MAPPED_VALUE) values (?,?,?)";
@@ -97,7 +92,6 @@ public class DBUtil {
 
 
 	public boolean deleteMapping(String category, String columnName ) {
-		ArrayList<String> li = new ArrayList<String>();
 		try {
 			Connection conn=DBUtil.getInstance().getConnection();
 			String query = "DELETE FROM OAT_MAPPING where CATEGORY=? and COLUMN_NAME=?";

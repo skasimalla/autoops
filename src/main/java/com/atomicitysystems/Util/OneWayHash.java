@@ -4,11 +4,14 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.logging.Logger;
 
 public class OneWayHash {
+	private final static Logger LOGGER = Logger.getLogger(OneWayHash.class.getName());
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(oneWayHash("123456"));
+		LOGGER.fine(oneWayHash("123456"));
 		
 	}
 	
