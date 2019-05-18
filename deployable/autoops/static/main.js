@@ -92,7 +92,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>"
+module.exports = "<app-header></app-header>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -109,6 +109,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services */ "./src/app/services/index.ts");
+/* harmony import */ var _config_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config.json */ "./src/config.json");
+var _config_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../config.json */ "./src/config.json", 1);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,16 +123,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppComponent = /** @class */ (function () {
     function AppComponent(_router, _storeService, _listDataService) {
         this._router = _router;
         this._storeService = _storeService;
         this._listDataService = _listDataService;
         this.title = 'coat3ui';
-        console.log('app constructor: ', window.location.href);
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        var coatApiUrl = _config_json__WEBPACK_IMPORTED_MODULE_3__.coatApiUrl;
+        this._storeService.CoatUrl = coatApiUrl;
         console.log('app on init: ', window.location.href);
         this._listDataService.getCommandList()
             .subscribe(function (result) {
@@ -261,7 +265,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".lg-image {\n    height: 90px;\n    width: 90px;\n}\n\n.sm-image {\n    height: 60px;\n    width: 60px;\n}\n\n.footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osV0FBVztBQUNmOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGVBQWU7SUFDZixRQUFRO0lBQ1IsWUFBWTtJQUNaLE9BQU87SUFDUCxhQUFhO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGctaW1hZ2Uge1xuICAgIGhlaWdodDogOTBweDtcbiAgICB3aWR0aDogOTBweDtcbn1cblxuLnNtLWltYWdlIHtcbiAgICBoZWlnaHQ6IDYwcHg7XG4gICAgd2lkdGg6IDYwcHg7XG59XG5cbi5mb290ZXIge1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDEwcHg7XG4gICAgbGVmdDogMDtcbiAgICB6LWluZGV4OiAxMDMwO1xufSJdfQ== */"
+module.exports = ".lg-image {\r\n    height: 90px;\r\n    width: 90px;\r\n}\r\n\r\n.sm-image {\r\n    height: 60px;\r\n    width: 60px;\r\n}\r\n\r\n.footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osV0FBVztBQUNmOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGVBQWU7SUFDZixRQUFRO0lBQ1IsWUFBWTtJQUNaLE9BQU87SUFDUCxhQUFhO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGctaW1hZ2Uge1xyXG4gICAgaGVpZ2h0OiA5MHB4O1xyXG4gICAgd2lkdGg6IDkwcHg7XHJcbn1cclxuXHJcbi5zbS1pbWFnZSB7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbiAgICB3aWR0aDogNjBweDtcclxufVxyXG5cclxuLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMTBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAxMDMwO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -272,7 +276,7 @@ module.exports = ".lg-image {\n    height: 90px;\n    width: 90px;\n}\n\n.sm-ima
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"text-center\" style=\"font-size: x-large\">\n        Dashboard\n    </div>\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"text-center\" style=\"font-size: x-large\">\r\n        Dashboard\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -322,7 +326,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header {\n    background-color: #343a40;\n    color: #fff;\n    max-height: 12%;\n  }\n\n.row {\n    align-items: center;\n}\n\n.logos  {\n    align-items: center;\n    justify-content: space-between;\n    flex-grow: 1;\n}\n\n.icon-home {\n    border-right: 1px solid rgba(0,0,0,.2);\n}\n\n.icon-home i {\n    color: #fff;\n    font-size: 2.5rem;\n}\n\n.coats-logo {\n    height: 4%;\n    width: 4%;\n    color: #007bff!important;\n}\n\nimg {\n    color: #007bff!important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7SUFDekIsV0FBVztJQUNYLGVBQWU7RUFDakI7O0FBRUY7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxtQkFBbUI7SUFDbkIsOEJBQThCO0lBQzlCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxzQ0FBc0M7QUFDMUM7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFNBQVM7SUFDVCx3QkFBd0I7QUFDNUI7O0FBRUE7SUFDSSx3QkFBd0I7QUFDNUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMzNDNhNDA7XG4gICAgY29sb3I6ICNmZmY7XG4gICAgbWF4LWhlaWdodDogMTIlO1xuICB9XG5cbi5yb3cge1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbi5sb2dvcyAge1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgIGZsZXgtZ3JvdzogMTtcbn1cblxuLmljb24taG9tZSB7XG4gICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgcmdiYSgwLDAsMCwuMik7XG59XG5cbi5pY29uLWhvbWUgaSB7XG4gICAgY29sb3I6ICNmZmY7XG4gICAgZm9udC1zaXplOiAyLjVyZW07XG59XG5cbi5jb2F0cy1sb2dvIHtcbiAgICBoZWlnaHQ6IDQlO1xuICAgIHdpZHRoOiA0JTtcbiAgICBjb2xvcjogIzAwN2JmZiFpbXBvcnRhbnQ7XG59XG5cbmltZyB7XG4gICAgY29sb3I6ICMwMDdiZmYhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = ".header {\r\n    background-color: #343a40;\r\n    color: #fff;\r\n    max-height: 12%;\r\n  }\r\n\r\n.row {\r\n    align-items: center;\r\n}\r\n\r\n.logos  {\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-grow: 1;\r\n}\r\n\r\n.icon-home {\r\n    border-right: 1px solid rgba(0,0,0,.2);\r\n}\r\n\r\n.icon-home i {\r\n    color: #fff;\r\n    font-size: 2.5rem;\r\n}\r\n\r\n.coats-logo {\r\n    height: 4%;\r\n    width: 4%;\r\n    color: #007bff!important;\r\n}\r\n\r\nimg {\r\n    color: #007bff!important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7SUFDekIsV0FBVztJQUNYLGVBQWU7RUFDakI7O0FBRUY7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxtQkFBbUI7SUFDbkIsOEJBQThCO0lBQzlCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxzQ0FBc0M7QUFDMUM7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFNBQVM7SUFDVCx3QkFBd0I7QUFDNUI7O0FBRUE7SUFDSSx3QkFBd0I7QUFDNUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzM0M2E0MDtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgbWF4LWhlaWdodDogMTIlO1xyXG4gIH1cclxuXHJcbi5yb3cge1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuLmxvZ29zICB7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZmxleC1ncm93OiAxO1xyXG59XHJcblxyXG4uaWNvbi1ob21lIHtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkIHJnYmEoMCwwLDAsLjIpO1xyXG59XHJcblxyXG4uaWNvbi1ob21lIGkge1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDIuNXJlbTtcclxufVxyXG5cclxuLmNvYXRzLWxvZ28ge1xyXG4gICAgaGVpZ2h0OiA0JTtcclxuICAgIHdpZHRoOiA0JTtcclxuICAgIGNvbG9yOiAjMDA3YmZmIWltcG9ydGFudDtcclxufVxyXG5cclxuaW1nIHtcclxuICAgIGNvbG9yOiAjMDA3YmZmIWltcG9ydGFudDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -333,7 +337,7 @@ module.exports = ".header {\n    background-color: #343a40;\n    color: #fff;\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm header\">\n    <div class=\"row d-flex\">\n        <div class=\"ml-3\">Safely\n            <span class=\"logos\">\n                <img class=\"navImage coats-logo\" src=\"assets/images/bullseye.svg\">\n            </span>\n            Ops\n        </div>\n    </div>\n\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-sm header\">\r\n    <div class=\"row d-flex\">\r\n        <div class=\"ml-3\">Auto\r\n            <span class=\"logos\">\r\n                <img class=\"navImage coats-logo\" src=\"assets/images/bullseye.svg\">\r\n            </span>\r\n            ps\r\n        </div>\r\n    </div>\r\n\r\n</nav>"
 
 /***/ }),
 
@@ -440,7 +444,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".text-dark {\n    color: var(--darkBlue);\n}\n\n.landing-page-btn {\n    background-color: var(--medBlue);\n    padding: 30px 30px;\n}\n\n.landing-page-btn:hover {\n    background-color: lightblue;\n}\n\n.lg-image {\n    height: 90px;\n    width: 200px;\n}\n\nfa-icon {\n    color: white;\n    margin-bottom: 50px;\n}\n\n/*.landing-page-icon {\n    padding-bottom: 90px;\n    margin-bottom: 20px;\n}c*/\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sYW5kaW5nLXBhZ2UvbGFuZGluZy1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxzQkFBc0I7QUFDMUI7O0FBRUE7SUFDSSxnQ0FBZ0M7SUFDaEMsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksMkJBQTJCO0FBQy9COztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCOztBQUVBOzs7R0FHRyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbGFuZGluZy1wYWdlL2xhbmRpbmctcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHQtZGFyayB7XG4gICAgY29sb3I6IHZhcigtLWRhcmtCbHVlKTtcbn1cblxuLmxhbmRpbmctcGFnZS1idG4ge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLW1lZEJsdWUpO1xuICAgIHBhZGRpbmc6IDMwcHggMzBweDtcbn1cblxuLmxhbmRpbmctcGFnZS1idG46aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Ymx1ZTtcbn1cblxuLmxnLWltYWdlIHtcbiAgICBoZWlnaHQ6IDkwcHg7XG4gICAgd2lkdGg6IDIwMHB4O1xufVxuXG5mYS1pY29uIHtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgbWFyZ2luLWJvdHRvbTogNTBweDtcbn1cblxuLyoubGFuZGluZy1wYWdlLWljb24ge1xuICAgIHBhZGRpbmctYm90dG9tOiA5MHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG59YyovIl19 */"
+module.exports = ".text-dark {\r\n    color: var(--darkBlue);\r\n}\r\n\r\n.landing-page-btn {\r\n    background-color: var(--medBlue);\r\n    padding: 30px 30px;\r\n}\r\n\r\n.landing-page-btn:hover {\r\n    background-color: lightblue;\r\n}\r\n\r\n.lg-image {\r\n    height: 90px;\r\n    width: 200px;\r\n}\r\n\r\nfa-icon {\r\n    color: white;\r\n    margin-bottom: 50px;\r\n}\r\n\r\n/*.landing-page-icon {\r\n    padding-bottom: 90px;\r\n    margin-bottom: 20px;\r\n}c*/\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sYW5kaW5nLXBhZ2UvbGFuZGluZy1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxzQkFBc0I7QUFDMUI7O0FBRUE7SUFDSSxnQ0FBZ0M7SUFDaEMsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksMkJBQTJCO0FBQy9COztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCOztBQUVBOzs7R0FHRyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbGFuZGluZy1wYWdlL2xhbmRpbmctcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHQtZGFyayB7XHJcbiAgICBjb2xvcjogdmFyKC0tZGFya0JsdWUpO1xyXG59XHJcblxyXG4ubGFuZGluZy1wYWdlLWJ0biB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1tZWRCbHVlKTtcclxuICAgIHBhZGRpbmc6IDMwcHggMzBweDtcclxufVxyXG5cclxuLmxhbmRpbmctcGFnZS1idG46aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlO1xyXG59XHJcblxyXG4ubGctaW1hZ2Uge1xyXG4gICAgaGVpZ2h0OiA5MHB4O1xyXG4gICAgd2lkdGg6IDIwMHB4O1xyXG59XHJcblxyXG5mYS1pY29uIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIG1hcmdpbi1ib3R0b206IDUwcHg7XHJcbn1cclxuXHJcbi8qLmxhbmRpbmctcGFnZS1pY29uIHtcclxuICAgIHBhZGRpbmctYm90dG9tOiA5MHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxufWMqLyJdfQ== */"
 
 /***/ }),
 
@@ -451,7 +455,7 @@ module.exports = ".text-dark {\n    color: var(--darkBlue);\n}\n\n.landing-page-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n    <div class=\"mt-3 row\">\n        <div class=\"col-2 text-dark\">Reports</div>\n        <div class=\"offset-3 col-2 text-dark\">Activities</div>\n    </div>\n\n    <div class=\"mt-2 row\">\n        <div class=\" col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\n                <fa-icon [icon]=\"['fas', 'chart-line']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">Dashboard</div>\n            </button>\n        </div>\n        <div class=\"col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\n                <fa-icon [icon]=\"['far', 'clock']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">History</div>\n            </button>\n        </div>\n        <div class=\"offset-1 col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\n                <fa-icon [icon]=\"['fas', 'search']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">Advanced Search</div>\n            </button>\n        </div>\n        <div class=\"col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\n                <fa-icon [icon]=\"['far', 'user']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">Profile</div>\n            </button>\n        </div>\n    </div>\n\n    <div class=\"mt-3 row\">\n\n        <div class=\" col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"routeToRequest()\">\n                <fa-icon [icon]=\"['fas', 'plus']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">Request</div>\n            </button>\n        </div>\n        <div class=\"col-2 text-dark\">\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\n                <fa-icon [icon]=\"['fas', 'check']\" size=\"5x\"></fa-icon>\n                <div class=\"text-white text-center mt-3\">Approve</div>\n            </button>\n        </div>\n\n    </div>\n\n</div>\n\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\n\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Premium Version Feature</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n\n    <div class=\"modal-body\">\n        <div class=\"row\">\n            <em class=\"col-12 mt-4 lead\">Please visit the website for the premium version</em>\n        </div>\n    </div>\n\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\n    </div>\n\n</ng-template>"
+module.exports = "<div class=\"container-fluid\">\r\n\r\n    <div class=\"mt-3 row\">\r\n        <div class=\"col-2 text-dark\"></div>\r\n        <div class=\"offset-3 col-2 text-dark\"></div>\r\n    </div>\r\n\r\n    <div class=\"mt-2 row\">\r\n        <div class=\" col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\r\n                <fa-icon [icon]=\"['fas', 'chart-line']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">Dashboard</div>\r\n            </button>\r\n        </div>\r\n        <div class=\"col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\r\n                <fa-icon [icon]=\"['far', 'clock']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">History</div>\r\n            </button>\r\n        </div>\r\n        <div class=\"offset-1 col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\r\n                <fa-icon [icon]=\"['fas', 'search']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">Advanced Search</div>\r\n            </button>\r\n        </div>\r\n        <div class=\"col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\r\n                <fa-icon [icon]=\"['far', 'user']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">Profile</div>\r\n            </button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"mt-3 row\">\r\n\r\n        <div class=\" col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"routeToRequest()\">\r\n                <fa-icon [icon]=\"['fas', 'plus']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">Request</div>\r\n            </button>\r\n        </div>\r\n        <div class=\"col-2 text-dark\">\r\n            <button class=\"btn shadow-lg landing-page-btn rounded btn-block\" (click)=\"premiumVersionFeature()\">\r\n                <fa-icon [icon]=\"['fas', 'check']\" size=\"5x\"></fa-icon>\r\n                <div class=\"text-white text-center mt-3\">Approve</div>\r\n            </button>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n\r\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\r\n\r\n    <div class=\"modal-header\">\r\n        <h4 class=\"modal-title\">Premium Version Feature</h4>\r\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n    </div>\r\n\r\n    <div class=\"modal-body\">\r\n        <div class=\"row\">\r\n            <em class=\"col-12 mt-4 lead\">Please visit the website for the premium version</em>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\r\n    </div>\r\n\r\n</ng-template>"
 
 /***/ }),
 
@@ -527,7 +531,7 @@ var LandingPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 600px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHJpZ2h0OiAwO1xuICAgIGJvdHRvbTogMTBweDtcbiAgICBsZWZ0OiAwO1xuICAgIHotaW5kZXg6IDEwMzA7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xuICAgIG1heC13aWR0aDogNjAwcHg7XG59XG5cbnVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xufVxuXG4udmwge1xuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XG59XG5cbi5idG4tbGluayB7XG4gICAgY29sb3I6Z3JleTtcbn0iXX0= */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 600px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMTBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAxMDMwO1xyXG59XHJcblxyXG4uYmFja2dyb3VuZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xyXG4gICAgbWF4LXdpZHRoOiA2MDBweDtcclxufVxyXG5cclxudWwge1xyXG4gICAgbGlzdC1zdHlsZTogbm9uZTtcclxufVxyXG5cclxuLnZsIHtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XHJcbn1cclxuXHJcbi5idG4tbGluayB7XHJcbiAgICBjb2xvcjpncmV5O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -538,7 +542,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container  shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-5\">\n        <div style=\"float: none; margin: 0 auto;\">\n            <input class=\"form-control\" [formControl]=\"userNameCtrl\" placeholder=\"Username\" [ngClass]=\"{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div style=\"float: none; margin: 0 auto;\">\n            <input type=\"password\" class=\"form-control\" [formControl]=\"passWordCtrl\" placeholder=\"Password\" [ngClass]=\"{'is-invalid': passWordCtrl.invalid && passWordCtrl.dirty}\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-4\">\n        <div style=\"float: none; margin: 0 auto;\">\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"login()\">Login</button>\n        </div>\n    </div>\n\n    <div *ngIf=\"showError\" class=\"row mt-5\">\n        <div style=\"float: none; margin: 0 auto;\" class=\"text-danger\">UserId and/or password is not correct</div>\n    </div>\n\n    <div class=\"text-center my-5\">\n        <a [routerLink]=\"['/register']\">New users please click on this link to register</a>\n    </div>\n\n</div>"
+module.exports = "<div class=\"container  shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-5\">\r\n        <div style=\"float: none; margin: 0 auto;\">\r\n            <input class=\"form-control\" [formControl]=\"userNameCtrl\" placeholder=\"Username\" [ngClass]=\"{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div style=\"float: none; margin: 0 auto;\">\r\n            <input type=\"password\" class=\"form-control\" [formControl]=\"passWordCtrl\" placeholder=\"Password\" [ngClass]=\"{'is-invalid': passWordCtrl.invalid && passWordCtrl.dirty}\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-4\">\r\n        <div style=\"float: none; margin: 0 auto;\">\r\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"login()\">Login</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf=\"showError\" class=\"row mt-5\">\r\n        <div style=\"float: none; margin: 0 auto;\" class=\"text-danger\">UserId and/or password is not correct</div>\r\n    </div>\r\n\r\n    <div class=\"text-center my-5\">\r\n        <a [routerLink]=\"['/register']\">New users please click on this link to register</a>\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -638,7 +642,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 600px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9vcGVyYXRpb24tYXBwcm92YWwvb3BlcmF0aW9uLWFwcHJvdmFsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL29wZXJhdGlvbi1hcHByb3ZhbC9vcGVyYXRpb24tYXBwcm92YWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDEwcHg7XG4gICAgbGVmdDogMDtcbiAgICB6LWluZGV4OiAxMDMwO1xufVxuXG4uYmFja2dyb3VuZCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcbiAgICBtYXgtd2lkdGg6IDYwMHB4O1xufVxuXG51bCB7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcbn1cblxuLnZsIHtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xufVxuXG4uYnRuLWxpbmsge1xuICAgIGNvbG9yOmdyZXk7XG59Il19 */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 600px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9vcGVyYXRpb24tYXBwcm92YWwvb3BlcmF0aW9uLWFwcHJvdmFsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL29wZXJhdGlvbi1hcHByb3ZhbC9vcGVyYXRpb24tYXBwcm92YWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDEwcHg7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgei1pbmRleDogMTAzMDtcclxufVxyXG5cclxuLmJhY2tncm91bmQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcclxuICAgIG1heC13aWR0aDogNjAwcHg7XHJcbn1cclxuXHJcbnVsIHtcclxuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuXHJcbi52bCB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xyXG59XHJcblxyXG4uYnRuLWxpbmsge1xyXG4gICAgY29sb3I6Z3JleTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -649,7 +653,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-3\">\n        <div class=\"col-12 text-center\" style=\"font-size: 14px\">Transaction Id: <span style=\"color: blue\"><em>{{transactionId}}</em></span></div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">User Name:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"userNameCtrl\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">Password:</div>\n        <div class=\"col-9\">\n            <input type=\"password\" class=\"form-control\" [formControl]=\"passwordCtrl\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">Type:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"typeCtrl\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">Token:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"tokenCtrl\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\n        <div class=\"offset-4 col-2\">\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submit()\">Submit</button>\n        </div>\n    </div>\n\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\n        <div class=\"offset-3 col-8\">\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\n        </div>\n\n    </div>\n</div>\n\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\n\n    <div class=\"modal-header\">\n        <h3 class=\"modal-title\" id=\"selectContactType\">{{headerMessage}}</h3>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n\n    <div class=\"modal-body\">\n        <div *ngIf=\"!modalMsg\">\n            <div class=\"row\">\n                <div class=\"col-12 mt-4 lead\">Your approval has been registered for {{transactionId}}. The operation is being</div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-12 mt-4 lead\">performed. Both you and the requestor will receive an email shortly.</div>\n            </div>\n        </div>\n\n        <div *ngIf=\"modalMsg\">\n                <div class=\"row\">\n                    <div class=\"col-12 mt-4 lead\">{{modalMsg}}</div>\n                </div>\n            </div>\n    </div>\n\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\n    </div>\n\n</ng-template>"
+module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-12 text-center\" style=\"font-size: 14px\">Transaction Id: <span style=\"color: blue\"><em>{{transactionId}}</em></span></div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">User Name:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"userNameCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">Password:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"password\" class=\"form-control\" [formControl]=\"passwordCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">Type:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"typeCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">Token:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"tokenCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\r\n        <div class=\"offset-4 col-2\">\r\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submit()\">Submit</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\r\n        <div class=\"offset-3 col-8\">\r\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\r\n\r\n    <div class=\"modal-header\">\r\n        <h3 class=\"modal-title\" id=\"selectContactType\">{{headerMessage}}</h3>\r\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n            <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n    </div>\r\n\r\n    <div class=\"modal-body\">\r\n        <div *ngIf=\"!modalMsg\">\r\n            <div class=\"row\">\r\n                <div class=\"col-12 mt-4 lead\">Your approval has been registered for {{transactionId}}. The operation is being</div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col-12 mt-4 lead\">performed. Both you and the requestor will receive an email shortly.</div>\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"modalMsg\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-12 mt-4 lead\">{{modalMsg}}</div>\r\n                </div>\r\n            </div>\r\n    </div>\r\n\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\r\n    </div>\r\n\r\n</ng-template>"
 
 /***/ }),
 
@@ -775,7 +779,7 @@ var OperationApprovalComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 600px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci1zdGF0dXMvcmVnaXN0ZXItc3RhdHVzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3JlZ2lzdGVyLXN0YXR1cy9yZWdpc3Rlci1zdGF0dXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDEwcHg7XG4gICAgbGVmdDogMDtcbiAgICB6LWluZGV4OiAxMDMwO1xufVxuXG4uYmFja2dyb3VuZCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcbiAgICBtYXgtd2lkdGg6IDYwMHB4O1xufVxuXG51bCB7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcbn1cblxuLnZsIHtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xufVxuXG4uYnRuLWxpbmsge1xuICAgIGNvbG9yOmdyZXk7XG59Il19 */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 600px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci1zdGF0dXMvcmVnaXN0ZXItc3RhdHVzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3JlZ2lzdGVyLXN0YXR1cy9yZWdpc3Rlci1zdGF0dXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDEwcHg7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgei1pbmRleDogMTAzMDtcclxufVxyXG5cclxuLmJhY2tncm91bmQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcclxuICAgIG1heC13aWR0aDogNjAwcHg7XHJcbn1cclxuXHJcbnVsIHtcclxuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuXHJcbi52bCB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xyXG59XHJcblxyXG4uYnRuLWxpbmsge1xyXG4gICAgY29sb3I6Z3JleTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -786,7 +790,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-5\">\n        <div class=\"col-12 text-center\">\n            Your approval has been registered for the operation is being performed\n        </div>\n        <div class=\"col-12 text-center\">\n            and both you and the requestor will shortly receive an email.\n        </div>\n    </div>\n\n    <div class=\"row my-5\">\n        <div class=\"col-12 text-center\">\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\n        </div>\n\n    </div>\n\n</div>"
+module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-5\">\r\n        <div class=\"col-12 text-center\">\r\n            Your approval has been registered for the operation is being performed\r\n        </div>\r\n        <div class=\"col-12 text-center\">\r\n            and both you and the requestor will shortly receive an email.\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row my-5\">\r\n        <div class=\"col-12 text-center\">\r\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -857,7 +861,7 @@ var RegisterStatusComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 600px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHJpZ2h0OiAwO1xuICAgIGJvdHRvbTogMTBweDtcbiAgICBsZWZ0OiAwO1xuICAgIHotaW5kZXg6IDEwMzA7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xuICAgIG1heC13aWR0aDogNjAwcHg7XG59XG5cbnVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xufVxuXG4udmwge1xuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XG59XG5cbi5idG4tbGluayB7XG4gICAgY29sb3I6Z3JleTtcbn0iXX0= */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 600px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMTBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAxMDMwO1xyXG59XHJcblxyXG4uYmFja2dyb3VuZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xyXG4gICAgbWF4LXdpZHRoOiA2MDBweDtcclxufVxyXG5cclxudWwge1xyXG4gICAgbGlzdC1zdHlsZTogbm9uZTtcclxufVxyXG5cclxuLnZsIHtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XHJcbn1cclxuXHJcbi5idG4tbGluayB7XHJcbiAgICBjb2xvcjpncmV5O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -868,7 +872,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container  shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-5\">\n        <div class=\"col-3 right-text\">Name:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"userNameCtrl\" [ngClass]=\"{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 right-text\">Email:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"emailCtrl\" [ngClass]=\"{'is-invalid': emailCtrl.invalid && emailCtrl.dirty}\" />\n        </div>\n    </div>\n\n\n    <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\n        <div class=\"offset-5 col-2\">\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"register()\">Submit</button>\n        </div>\n    </div>\n\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\n        <div class=\"offset-3 col-8\">\n            <a [routerLink]=\"['login']\">\n                Your registration request has been submitted. <br>Click here to navigate to the login page\n            </a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div class=\"container  shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-5\">\r\n        <div class=\"col-3 right-text\">Name:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"userNameCtrl\" [ngClass]=\"{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 right-text\">Email:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"emailCtrl\" [ngClass]=\"{'is-invalid': emailCtrl.invalid && emailCtrl.dirty}\" />\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\r\n        <div class=\"offset-5 col-2\">\r\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"register()\">Submit</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\r\n        <div class=\"offset-3 col-8\">\r\n            <a [routerLink]=\"['login']\">\r\n                Your registration request has been submitted. <br>Click here to navigate to the login page\r\n            </a>\r\n        </div>\r\n\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -965,7 +969,7 @@ var RegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 800px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWplY3QvcmVqZWN0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3JlamVjdC9yZWplY3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICByaWdodDogMDtcbiAgICBib3R0b206IDEwcHg7XG4gICAgbGVmdDogMDtcbiAgICB6LWluZGV4OiAxMDMwO1xufVxuXG4uYmFja2dyb3VuZCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcbiAgICBtYXgtd2lkdGg6IDgwMHB4O1xufVxuXG51bCB7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcbn1cblxuLnZsIHtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xufVxuXG4uYnRuLWxpbmsge1xuICAgIGNvbG9yOmdyZXk7XG59Il19 */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 800px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWplY3QvcmVqZWN0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsUUFBUTtJQUNSLFlBQVk7SUFDWixPQUFPO0lBQ1AsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHFDQUFxQztJQUNyQyxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3JlamVjdC9yZWplY3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDEwcHg7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgei1pbmRleDogMTAzMDtcclxufVxyXG5cclxuLmJhY2tncm91bmQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjAzKTtcclxuICAgIG1heC13aWR0aDogODAwcHg7XHJcbn1cclxuXHJcbnVsIHtcclxuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuXHJcbi52bCB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjY2NjO1xyXG59XHJcblxyXG4uYnRuLWxpbmsge1xyXG4gICAgY29sb3I6Z3JleTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -976,7 +980,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-3\">\n        <div class=\"col-12 text-center\" style=\"font-size: 14px\">Transaction Id: <span style=\"color: blue\"><em>{{transactionId}}</em></span></div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">Txn Id:</div>\n        <div class=\"col-9\">\n            <input type=\"text\" class=\"form-control\" [formControl]=\"trxIdCtrl\" />\n        </div>\n    </div>\n\n    <div class=\"row mt-3\">\n        <div class=\"col-3 text-right\">Reason for Rejection:</div>\n        <div class=\"col-9\">\n            <input type=\"password\" class=\"form-control\" [formControl]=\"reasonCtrl\" />\n        </div>\n    </div>\n\n     <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\n        <div class=\"offset-4 col-2\">\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submit()\">Submit</button>\n        </div>\n    </div>\n\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\n        <div class=\"offset-3 col-8\">\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\n        </div>\n    \n    </div>\n</div>"
+module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-12 text-center\" style=\"font-size: 14px\">Transaction Id: <span style=\"color: blue\"><em>{{transactionId}}</em></span></div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">Txn Id:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"text\" class=\"form-control\" [formControl]=\"trxIdCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n        <div class=\"col-3 text-right\">Reason for Rejection:</div>\r\n        <div class=\"col-9\">\r\n            <input type=\"password\" class=\"form-control\" [formControl]=\"reasonCtrl\" />\r\n        </div>\r\n    </div>\r\n\r\n     <div class=\"row mt-4\" *ngIf=\"showSubmitButton\">\r\n        <div class=\"offset-4 col-2\">\r\n            <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submit()\">Submit</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row my-5\" *ngIf=\"!showSubmitButton\">\r\n        <div class=\"offset-3 col-8\">\r\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\r\n        </div>\r\n    \r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1060,7 +1064,7 @@ var RejectComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n.background {\n    background-color:white;\n    max-width: 600px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXBhZ2UvcmVxdWVzdC1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksc0JBQXNCO0lBQ3RCLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVxdWVzdC1wYWdlL3JlcXVlc3QtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uYmFja2dyb3VuZCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTtcbiAgICBtYXgtd2lkdGg6IDYwMHB4O1xufVxuIl19 */"
+module.exports = "\r\n.background {\r\n    background-color:white;\r\n    max-width: 600px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXBhZ2UvcmVxdWVzdC1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksc0JBQXNCO0lBQ3RCLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVxdWVzdC1wYWdlL3JlcXVlc3QtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi5iYWNrZ3JvdW5kIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6d2hpdGU7XHJcbiAgICBtYXgtd2lkdGg6IDYwMHB4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -1071,7 +1075,7 @@ module.exports = "\n.background {\n    background-color:white;\n    max-width: 6
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container mt-3 pt-3 pb-3 rounded background\" style=\"max-width:900px\">\n  <div class=\"row mt-3\">\n    <div class=\"offset-1 col-2  text-right\">Team Name:</div>\n    <div class=\"col-6\">\n      <input class=\"form-control\" [formControl]=\"teamNameCtrl\" [name]=\"teamNameCtrlName\" [ngClass]=\"{'is-invalid': teamNameCtrl.invalid && teamNameCtrl.dirty}\" />\n    </div>\n  </div>\n\n    <div class=\"row mt-3\">\n      <div class=\"offset-1 col-2 text-right\">Server Name:</div>\n      <div class=\"col-6\">\n        <input class=\"form-control\" [formControl]=\"serverNameCtrl\" [name]=\"serverNameCtrlName\" [ngClass]=\"{'is-invalid': serverNameCtrl.invalid && serverNameCtrl.dirty}\" />\n      </div>\n    </div>\n\n    <div class=\"row mt-3\">\n      <div class=\"offset-1 col-2 text-right\">Service Account:</div>\n      <div class=\"col-6\">\n        <input class=\"form-control\" [formControl]=\"fidCtrl\" [name]=\"fidCtrlName\" [ngClass]=\"{'is-invalid': fidCtrl.invalid && fidCtrl.dirty}\" />\n      </div>\n    </div>\n\n\n  <div class=\"row mt-3 mb-3\">\n    <div class=\"col-3  text-right\">Action To Perform:</div>\n    <div class=\"col-6\">\n      <app-option-filter [formControl]=\"actionCtrl\" [name]=\"actionCtrlName\" (click)=\"getPart2()\" [choices]=\"actionList\"></app-option-filter>\n    </div>\n  </div>\n\n  <div *ngIf=\"showBottomHalf()\" class=\"mt-3\">\n\n    <div *ngFor=\"let ctrl of part2Ctrls; let i = index\" class=\"row mt-3\">\n      <div class=\"col-3 text-right\">{{fileCommandList[i].value}}:</div>\n\n      <div class=\"col-6\">\n        <input class=\"form-control\" [formControl]=\"part2Ctrls[i]\" [name]=\"fileCommandList[i]\" [ngClass]=\"{'is-invalid': part2Ctrls[i].invalid && part2Ctrls[i].dirty}\" />\n      </div>\n\n    </div>\n\n    <div class=\"row mt-3 mb-3\">\n      <div class=\"offset-4 col-6\">\n        <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submitPart2()\">Submit</button>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\n\n  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n\n  <div class=\"modal-body\">\n    <div class=\"row\">\n      <em class=\"col-12 mt-4 lead\">{{modalMsg}}</em>\n    </div>\n  </div>\n\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\n  </div>\n\n</ng-template>"
+module.exports = "<div class=\"container mt-3 pt-3 pb-3 rounded background\" style=\"max-width:900px\">\r\n  <div class=\"row mt-3\">\r\n    <div class=\"offset-1 col-2  text-right\">Team Name:</div>\r\n    <div class=\"col-6\">\r\n      <input class=\"form-control\" [formControl]=\"teamNameCtrl\" [name]=\"teamNameCtrlName\" [ngClass]=\"{'is-invalid': teamNameCtrl.invalid && teamNameCtrl.dirty}\" />\r\n    </div>\r\n  </div>\r\n\r\n    <div class=\"row mt-3\">\r\n      <div class=\"offset-1 col-2 text-right\">Server Name:</div>\r\n      <div class=\"col-6\">\r\n        <input class=\"form-control\" [formControl]=\"serverNameCtrl\" [name]=\"serverNameCtrlName\" [ngClass]=\"{'is-invalid': serverNameCtrl.invalid && serverNameCtrl.dirty}\" />\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row mt-3\">\r\n      <div class=\"offset-1 col-2 text-right\">Service Account:</div>\r\n      <div class=\"col-6\">\r\n        <input class=\"form-control\" [formControl]=\"fidCtrl\" [name]=\"fidCtrlName\" [ngClass]=\"{'is-invalid': fidCtrl.invalid && fidCtrl.dirty}\" />\r\n      </div>\r\n    </div>\r\n\r\n\r\n  <div class=\"row mt-3 mb-3\">\r\n    <div class=\"col-3  text-right\">Action To Perform:</div>\r\n    <div class=\"col-6\">\r\n      <app-option-filter [formControl]=\"actionCtrl\" [name]=\"actionCtrlName\" (click)=\"getPart2()\" [choices]=\"actionList\"></app-option-filter>\r\n    </div>\r\n  </div>\r\n\r\n  <div *ngIf=\"showBottomHalf()\" class=\"mt-3\">\r\n\r\n    <div *ngFor=\"let ctrl of part2Ctrls; let i = index\" class=\"row mt-3\">\r\n      <div class=\"col-3 text-right\">{{fileCommandList[i].value}}:</div>\r\n\r\n      <div class=\"col-6\">\r\n        <input class=\"form-control\" [formControl]=\"part2Ctrls[i]\" [name]=\"fileCommandList[i]\" [ngClass]=\"{'is-invalid': part2Ctrls[i].invalid && part2Ctrls[i].dirty}\" />\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"row mt-3 mb-3\">\r\n      <div class=\"offset-4 col-6\">\r\n        <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px\" (click)=\"submitPart2()\">Submit</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<ng-template #modalDialog class=\"modal fade\" let-c=\"close\" let-d=\"dismiss\" role=\"dialog\">\r\n\r\n  <div class=\"modal-header\">\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n\r\n  <div class=\"modal-body\">\r\n    <div class=\"row\">\r\n      <em class=\"col-12 mt-4 lead\">{{modalMsg}}</em>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"onOk()\">OK</button>\r\n  </div>\r\n\r\n</ng-template>"
 
 /***/ }),
 
@@ -1127,11 +1131,23 @@ var RequestPageComponent = /** @class */ (function () {
         this.showPart2 = false;
     }
     RequestPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.form = this._fb.group({});
         this.form.addControl(this.teamNameCtrlName, this.teamNameCtrl);
         this.form.addControl(this.actionCtrlName, this.actionCtrl);
         this.user = this._storeService.User;
-        this.actionList = this._storeService.ActionListData;
+        if (this._storeService.ActionListData) {
+            this.actionList = this._storeService.ActionListData;
+        }
+        else {
+            this._listDataService.getCommandList()
+                .subscribe(function (result) {
+                _this._storeService.ActionListData = result;
+                _this.actionList = _this._storeService.ActionListData;
+            }, function (error) {
+                console.log(error.msg);
+            });
+        }
         this.teamNameCtrl.setValue('Team1');
     };
     RequestPageComponent.prototype.getPart2 = function () {
@@ -1219,7 +1235,7 @@ var RequestPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10px;\n    left: 0;\n    z-index: 1030;\n}\n\n.background {\n    background-color: rgba(0, 0, 0, 0.03);\n    max-width: 600px;\n}\n\nul {\n    list-style: none;\n}\n\n.vl {\n    border-right: 1px solid #ccc;\n}\n\n.btn-link {\n    color:grey;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXN0YXR1cy9yZXF1ZXN0LXN0YXR1cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXN0YXR1cy9yZXF1ZXN0LXN0YXR1cy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHJpZ2h0OiAwO1xuICAgIGJvdHRvbTogMTBweDtcbiAgICBsZWZ0OiAwO1xuICAgIHotaW5kZXg6IDEwMzA7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xuICAgIG1heC13aWR0aDogNjAwcHg7XG59XG5cbnVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xufVxuXG4udmwge1xuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XG59XG5cbi5idG4tbGluayB7XG4gICAgY29sb3I6Z3JleTtcbn0iXX0= */"
+module.exports = ".footer {\r\n    position: fixed;\r\n    right: 0;\r\n    bottom: 10px;\r\n    left: 0;\r\n    z-index: 1030;\r\n}\r\n\r\n.background {\r\n    background-color: rgba(0, 0, 0, 0.03);\r\n    max-width: 600px;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n}\r\n\r\n.vl {\r\n    border-right: 1px solid #ccc;\r\n}\r\n\r\n.btn-link {\r\n    color:grey;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXN0YXR1cy9yZXF1ZXN0LXN0YXR1cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFFBQVE7SUFDUixZQUFZO0lBQ1osT0FBTztJQUNQLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxxQ0FBcUM7SUFDckMsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yZXF1ZXN0LXN0YXR1cy9yZXF1ZXN0LXN0YXR1cy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMTBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAxMDMwO1xyXG59XHJcblxyXG4uYmFja2dyb3VuZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDMpO1xyXG4gICAgbWF4LXdpZHRoOiA2MDBweDtcclxufVxyXG5cclxudWwge1xyXG4gICAgbGlzdC1zdHlsZTogbm9uZTtcclxufVxyXG5cclxuLnZsIHtcclxuICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICNjY2M7XHJcbn1cclxuXHJcbi5idG4tbGluayB7XHJcbiAgICBjb2xvcjpncmV5O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -1230,7 +1246,7 @@ module.exports = ".footer {\n    position: fixed;\n    right: 0;\n    bottom: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\n\n    <div class=\"row mt-3\">\n        <ol>\n            <li>Your requested has been submitted {{transactionId}}</li>\n            <li>A email has been sent to the approver</li>\n            <li>You will be notified once they approve it and task runs.</li>\n        </ol>\n    </div>\n\n    <div class=\"row my-5\">\n        <div class=\"offset-3 col-8\">\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div class=\"container shadow-lg mt-5 pt-3 pb-3 rounded background\">\r\n\r\n    <div class=\"row mt-3\">\r\n        <ol>\r\n            <li>Your requested has been submitted {{transactionId}}</li>\r\n            <li>A email has been sent to the approver</li>\r\n            <li>You will be notified once they approve it and task runs.</li>\r\n        </ol>\r\n    </div>\r\n\r\n    <div class=\"row my-5\">\r\n        <div class=\"offset-3 col-8\">\r\n            <a [routerLink]=\"['/landingpage']\">Return to dashboard</a>\r\n        </div>\r\n\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1301,7 +1317,7 @@ var RequestStatusComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\n    list-style: none;\n}\n\nul.dropdown-menu-form {\n\tpadding: 5px 10px 0;\n\toverflow-y: auto;\n    height: 500px;\n}\n\n/* Button Styling */\n\n.btn-outline-default {\n    border-color: lightgray;\n}\n\n.btn-outline-default:hover {\n    background-color: lightgray\n}\n\n.btn-outline-default:active,\n.btn-outline-default.active,\n.open > .btn-outline-default.dropdown-toggle {\n    background-color: lightgray;\n}\n\n.btn-outline-default:active:hover,\n.btn-outline-default:active:focus,\n.btn-outline-default:active.focus,\n.btn-outline-default.active:hover,\n.btn-outline-default.active:focus,\n.btn-outline-default.active.focus,\n.open > .btn-outline-default.dropdown-toggle:hover,\n.open > .btn-outline-default.dropdown-toggle:focus,\n.open > .btn-outline-default.dropdown-toggle.focus {\n    background-color: lightgray;\n}\n\n.btn-outline-primary.disabled:focus,\n.btn-outline-primary.disabled.focus,\n.btn-outline-primary:disabled:focus,\n.btn-outline-primary:disabled.focus {\n  background-color: lightgray;\n  border-color: lightgray;\n}\n\n.btn-outline-primary.disabled:hover,\n.btn-outline-primary:disabled:hover {\n  background-color: lightgray;\n  border-color: lightgray;\n}\n\n.option-box {\n    padding: 0; \n    height: 39px !important;\n}\n\nspan.limit-ellipsis {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n}\n\n.filter-btn {\n    position: relative;\n    height: 34px;\n}\n\n.filtered-btn a span {\n    display: block;\n    overflow: hidden;\n    margin-right: 10px;\n}\n\n.dropdown-item-list {\n    padding: 2px 4px;\n    margin: 2px 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbnRyb2xzL29wdGlvbi1maWx0ZXIvb3B0aW9uLWZpbHRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0NBQ0MsbUJBQW1CO0NBQ25CLGdCQUFnQjtJQUNiLGFBQWE7QUFDakI7O0FBRUEsbUJBQW1COztBQUNuQjtJQUNJLHVCQUF1QjtBQUMzQjs7QUFFQTtJQUNJO0FBQ0o7O0FBRUE7OztJQUdJLDJCQUEyQjtBQUMvQjs7QUFFQTs7Ozs7Ozs7O0lBU0ksMkJBQTJCO0FBQy9COztBQUVBOzs7O0VBSUUsMkJBQTJCO0VBQzNCLHVCQUF1QjtBQUN6Qjs7QUFDQTs7RUFFRSwyQkFBMkI7RUFDM0IsdUJBQXVCO0FBQ3pCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHVCQUF1QjtBQUMzQjs7QUFFQTtFQUNFLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsZ0JBQWdCO0FBQ2xCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixhQUFhO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY3VzdG9tLWNvbnRyb2xzL29wdGlvbi1maWx0ZXIvb3B0aW9uLWZpbHRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG59XG5cbnVsLmRyb3Bkb3duLW1lbnUtZm9ybSB7XG5cdHBhZGRpbmc6IDVweCAxMHB4IDA7XG5cdG92ZXJmbG93LXk6IGF1dG87XG4gICAgaGVpZ2h0OiA1MDBweDtcbn1cblxuLyogQnV0dG9uIFN0eWxpbmcgKi9cbi5idG4tb3V0bGluZS1kZWZhdWx0IHtcbiAgICBib3JkZXItY29sb3I6IGxpZ2h0Z3JheTtcbn1cblxuLmJ0bi1vdXRsaW5lLWRlZmF1bHQ6aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z3JheVxufVxuXG4uYnRuLW91dGxpbmUtZGVmYXVsdDphY3RpdmUsXG4uYnRuLW91dGxpbmUtZGVmYXVsdC5hY3RpdmUsXG4ub3BlbiA+IC5idG4tb3V0bGluZS1kZWZhdWx0LmRyb3Bkb3duLXRvZ2dsZSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5O1xufVxuXG4uYnRuLW91dGxpbmUtZGVmYXVsdDphY3RpdmU6aG92ZXIsXG4uYnRuLW91dGxpbmUtZGVmYXVsdDphY3RpdmU6Zm9jdXMsXG4uYnRuLW91dGxpbmUtZGVmYXVsdDphY3RpdmUuZm9jdXMsXG4uYnRuLW91dGxpbmUtZGVmYXVsdC5hY3RpdmU6aG92ZXIsXG4uYnRuLW91dGxpbmUtZGVmYXVsdC5hY3RpdmU6Zm9jdXMsXG4uYnRuLW91dGxpbmUtZGVmYXVsdC5hY3RpdmUuZm9jdXMsXG4ub3BlbiA+IC5idG4tb3V0bGluZS1kZWZhdWx0LmRyb3Bkb3duLXRvZ2dsZTpob3Zlcixcbi5vcGVuID4gLmJ0bi1vdXRsaW5lLWRlZmF1bHQuZHJvcGRvd24tdG9nZ2xlOmZvY3VzLFxuLm9wZW4gPiAuYnRuLW91dGxpbmUtZGVmYXVsdC5kcm9wZG93bi10b2dnbGUuZm9jdXMge1xuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z3JheTtcbn1cblxuLmJ0bi1vdXRsaW5lLXByaW1hcnkuZGlzYWJsZWQ6Zm9jdXMsXG4uYnRuLW91dGxpbmUtcHJpbWFyeS5kaXNhYmxlZC5mb2N1cyxcbi5idG4tb3V0bGluZS1wcmltYXJ5OmRpc2FibGVkOmZvY3VzLFxuLmJ0bi1vdXRsaW5lLXByaW1hcnk6ZGlzYWJsZWQuZm9jdXMge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XG4gIGJvcmRlci1jb2xvcjogbGlnaHRncmF5O1xufVxuLmJ0bi1vdXRsaW5lLXByaW1hcnkuZGlzYWJsZWQ6aG92ZXIsXG4uYnRuLW91dGxpbmUtcHJpbWFyeTpkaXNhYmxlZDpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z3JheTtcbiAgYm9yZGVyLWNvbG9yOiBsaWdodGdyYXk7XG59XG5cbi5vcHRpb24tYm94IHtcbiAgICBwYWRkaW5nOiAwOyBcbiAgICBoZWlnaHQ6IDM5cHggIWltcG9ydGFudDtcbn1cblxuc3Bhbi5saW1pdC1lbGxpcHNpcyB7XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uZmlsdGVyLWJ0biB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGhlaWdodDogMzRweDtcbn1cblxuLmZpbHRlcmVkLWJ0biBhIHNwYW4ge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xufVxuXG4uZHJvcGRvd24taXRlbS1saXN0IHtcbiAgICBwYWRkaW5nOiAycHggNHB4O1xuICAgIG1hcmdpbjogMnB4IDA7XG59XG4iXX0= */"
+module.exports = "ul {\r\n    list-style: none;\r\n}\r\n\r\nul.dropdown-menu-form {\r\n\tpadding: 5px 10px 0;\r\n\toverflow-y: auto;\r\n    height: 500px;\r\n}\r\n\r\n/* Button Styling */\r\n\r\n.btn-outline-default {\r\n    border-color: lightgray;\r\n}\r\n\r\n.btn-outline-default:hover {\r\n    background-color: lightgray\r\n}\r\n\r\n.btn-outline-default:active,\r\n.btn-outline-default.active,\r\n.open > .btn-outline-default.dropdown-toggle {\r\n    background-color: lightgray;\r\n}\r\n\r\n.btn-outline-default:active:hover,\r\n.btn-outline-default:active:focus,\r\n.btn-outline-default:active.focus,\r\n.btn-outline-default.active:hover,\r\n.btn-outline-default.active:focus,\r\n.btn-outline-default.active.focus,\r\n.open > .btn-outline-default.dropdown-toggle:hover,\r\n.open > .btn-outline-default.dropdown-toggle:focus,\r\n.open > .btn-outline-default.dropdown-toggle.focus {\r\n    background-color: lightgray;\r\n}\r\n\r\n.btn-outline-primary.disabled:focus,\r\n.btn-outline-primary.disabled.focus,\r\n.btn-outline-primary:disabled:focus,\r\n.btn-outline-primary:disabled.focus {\r\n  background-color: lightgray;\r\n  border-color: lightgray;\r\n}\r\n\r\n.btn-outline-primary.disabled:hover,\r\n.btn-outline-primary:disabled:hover {\r\n  background-color: lightgray;\r\n  border-color: lightgray;\r\n}\r\n\r\n.option-box {\r\n    padding: 0; \r\n    height: 39px !important;\r\n}\r\n\r\nspan.limit-ellipsis {\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n}\r\n\r\n.filter-btn {\r\n    position: relative;\r\n    height: 34px;\r\n}\r\n\r\n.filtered-btn a span {\r\n    display: block;\r\n    overflow: hidden;\r\n    margin-right: 10px;\r\n}\r\n\r\n.dropdown-item-list {\r\n    padding: 2px 4px;\r\n    margin: 2px 0;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbnRyb2xzL29wdGlvbi1maWx0ZXIvb3B0aW9uLWZpbHRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0NBQ0MsbUJBQW1CO0NBQ25CLGdCQUFnQjtJQUNiLGFBQWE7QUFDakI7O0FBRUEsbUJBQW1COztBQUNuQjtJQUNJLHVCQUF1QjtBQUMzQjs7QUFFQTtJQUNJO0FBQ0o7O0FBRUE7OztJQUdJLDJCQUEyQjtBQUMvQjs7QUFFQTs7Ozs7Ozs7O0lBU0ksMkJBQTJCO0FBQy9COztBQUVBOzs7O0VBSUUsMkJBQTJCO0VBQzNCLHVCQUF1QjtBQUN6Qjs7QUFDQTs7RUFFRSwyQkFBMkI7RUFDM0IsdUJBQXVCO0FBQ3pCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHVCQUF1QjtBQUMzQjs7QUFFQTtFQUNFLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsZ0JBQWdCO0FBQ2xCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixhQUFhO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY3VzdG9tLWNvbnRyb2xzL29wdGlvbi1maWx0ZXIvb3B0aW9uLWZpbHRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidWwge1xyXG4gICAgbGlzdC1zdHlsZTogbm9uZTtcclxufVxyXG5cclxudWwuZHJvcGRvd24tbWVudS1mb3JtIHtcclxuXHRwYWRkaW5nOiA1cHggMTBweCAwO1xyXG5cdG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG59XHJcblxyXG4vKiBCdXR0b24gU3R5bGluZyAqL1xyXG4uYnRuLW91dGxpbmUtZGVmYXVsdCB7XHJcbiAgICBib3JkZXItY29sb3I6IGxpZ2h0Z3JheTtcclxufVxyXG5cclxuLmJ0bi1vdXRsaW5lLWRlZmF1bHQ6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5XHJcbn1cclxuXHJcbi5idG4tb3V0bGluZS1kZWZhdWx0OmFjdGl2ZSxcclxuLmJ0bi1vdXRsaW5lLWRlZmF1bHQuYWN0aXZlLFxyXG4ub3BlbiA+IC5idG4tb3V0bGluZS1kZWZhdWx0LmRyb3Bkb3duLXRvZ2dsZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XHJcbn1cclxuXHJcbi5idG4tb3V0bGluZS1kZWZhdWx0OmFjdGl2ZTpob3ZlcixcclxuLmJ0bi1vdXRsaW5lLWRlZmF1bHQ6YWN0aXZlOmZvY3VzLFxyXG4uYnRuLW91dGxpbmUtZGVmYXVsdDphY3RpdmUuZm9jdXMsXHJcbi5idG4tb3V0bGluZS1kZWZhdWx0LmFjdGl2ZTpob3ZlcixcclxuLmJ0bi1vdXRsaW5lLWRlZmF1bHQuYWN0aXZlOmZvY3VzLFxyXG4uYnRuLW91dGxpbmUtZGVmYXVsdC5hY3RpdmUuZm9jdXMsXHJcbi5vcGVuID4gLmJ0bi1vdXRsaW5lLWRlZmF1bHQuZHJvcGRvd24tdG9nZ2xlOmhvdmVyLFxyXG4ub3BlbiA+IC5idG4tb3V0bGluZS1kZWZhdWx0LmRyb3Bkb3duLXRvZ2dsZTpmb2N1cyxcclxuLm9wZW4gPiAuYnRuLW91dGxpbmUtZGVmYXVsdC5kcm9wZG93bi10b2dnbGUuZm9jdXMge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5O1xyXG59XHJcblxyXG4uYnRuLW91dGxpbmUtcHJpbWFyeS5kaXNhYmxlZDpmb2N1cyxcclxuLmJ0bi1vdXRsaW5lLXByaW1hcnkuZGlzYWJsZWQuZm9jdXMsXHJcbi5idG4tb3V0bGluZS1wcmltYXJ5OmRpc2FibGVkOmZvY3VzLFxyXG4uYnRuLW91dGxpbmUtcHJpbWFyeTpkaXNhYmxlZC5mb2N1cyB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5O1xyXG4gIGJvcmRlci1jb2xvcjogbGlnaHRncmF5O1xyXG59XHJcbi5idG4tb3V0bGluZS1wcmltYXJ5LmRpc2FibGVkOmhvdmVyLFxyXG4uYnRuLW91dGxpbmUtcHJpbWFyeTpkaXNhYmxlZDpob3ZlciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmF5O1xyXG4gIGJvcmRlci1jb2xvcjogbGlnaHRncmF5O1xyXG59XHJcblxyXG4ub3B0aW9uLWJveCB7XHJcbiAgICBwYWRkaW5nOiAwOyBcclxuICAgIGhlaWdodDogMzlweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5zcGFuLmxpbWl0LWVsbGlwc2lzIHtcclxuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbn1cclxuXHJcbi5maWx0ZXItYnRuIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGhlaWdodDogMzRweDtcclxufVxyXG5cclxuLmZpbHRlcmVkLWJ0biBhIHNwYW4ge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG59XHJcblxyXG4uZHJvcGRvd24taXRlbS1saXN0IHtcclxuICAgIHBhZGRpbmc6IDJweCA0cHg7XHJcbiAgICBtYXJnaW46IDJweCAwO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -1312,7 +1328,7 @@ module.exports = "ul {\n    list-style: none;\n}\n\nul.dropdown-menu-form {\n\tp
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-control option-box\" [ngClass]=\"{'is-invalid': formControl.invalid && formControl.dirty}\" >\n    <div ngbDropdown class=\"filter-btn\">\n        <a class=\"form-control btn\" ngbDropdownToggle ngClass=\"readOnly\">\n            <span class=\"limit-ellipses\" ngClass=\"text-muted\">\n                {{ selection || \"Select Option\" }}\n            </span>\n        </a>\n        <ul ngbDropdownMenu class=\"form-control dropdown-menu-form\" collapse=\"isCollapsed\">\n            <li>\n                <input \n                    [formControl]=\"searchCtrl\" \n                    class=\"form-control\" \n                    type=\"text\" \n                    placeholder=\"Search\" \n                    (click)=\"$event.stopPropagation()\">\n            </li>\n            <div class=\"dropdown-divider\"></div>\n            <li \n                class=\"dropdown-item dropdown-item-list\" \n                *ngFor=\"let reason of filteredReasons\" \n                (click)=\"onChange(reason);\" >\n                {{reason.value}}\n            </li>\n            \n        </ul>\n    </div>\n</div>"
+module.exports = "<div class=\"form-control option-box\" [ngClass]=\"{'is-invalid': formControl.invalid && formControl.dirty}\" >\r\n    <div ngbDropdown class=\"filter-btn\">\r\n        <a class=\"form-control btn\" ngbDropdownToggle ngClass=\"readOnly\">\r\n            <span class=\"limit-ellipses\" ngClass=\"text-muted\">\r\n                {{ selection || \"Select Option\" }}\r\n            </span>\r\n        </a>\r\n        <ul ngbDropdownMenu class=\"form-control dropdown-menu-form\" collapse=\"isCollapsed\">\r\n            <li>\r\n                <input \r\n                    [formControl]=\"searchCtrl\" \r\n                    class=\"form-control\" \r\n                    type=\"text\" \r\n                    placeholder=\"Search\" \r\n                    (click)=\"$event.stopPropagation()\">\r\n            </li>\r\n            <div class=\"dropdown-divider\"></div>\r\n            <li \r\n                class=\"dropdown-item dropdown-item-list\" \r\n                *ngFor=\"let reason of filteredReasons\" \r\n                (click)=\"onChange(reason);\" >\r\n                {{reason.value}}\r\n            </li>\r\n            \r\n        </ul>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1541,8 +1557,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthenticationService", function() { return AuthenticationService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utilities */ "./src/app/utilities/index.ts");
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities */ "./src/app/utilities/index.ts");
+/* harmony import */ var _store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store.service */ "./src/app/services/store.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1557,26 +1573,29 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AuthenticationService = /** @class */ (function () {
-    function AuthenticationService(_httpClient) {
+    function AuthenticationService(_storeService, _httpClient) {
+        this._storeService = _storeService;
         this._httpClient = _httpClient;
+        this.coatApiUrl = _storeService.CoatUrl;
     }
     AuthenticationService.prototype.authenticate = function (userId, password) {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'authenticate';
+        var url = this.coatApiUrl + 'authenticate';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('password', password).set('userid', userId);
-        var headers = _utilities__WEBPACK_IMPORTED_MODULE_3__["MiscUtilities"].createHeadersJson();
+        var headers = _utilities__WEBPACK_IMPORTED_MODULE_2__["MiscUtilities"].createHeadersJson();
         return this._httpClient
             .get(url, { headers: headers, params: params });
     };
     AuthenticationService.prototype.register = function (userName, email) {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'register';
+        var url = this.coatApiUrl + 'register';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('name', userName).set('email', email);
-        var headers = _utilities__WEBPACK_IMPORTED_MODULE_3__["MiscUtilities"].createHeadersJson();
+        var headers = _utilities__WEBPACK_IMPORTED_MODULE_2__["MiscUtilities"].createHeadersJson();
         return this._httpClient
             .get(url, { headers: headers, params: params });
     };
     AuthenticationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_store_service__WEBPACK_IMPORTED_MODULE_3__["StoreService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], AuthenticationService);
     return AuthenticationService;
 }());
@@ -1626,8 +1645,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListDataService", function() { return ListDataService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utilities */ "./src/app/utilities/index.ts");
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities */ "./src/app/utilities/index.ts");
+/* harmony import */ var _store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store.service */ "./src/app/services/store.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1642,29 +1661,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var ListDataService = /** @class */ (function () {
-    function ListDataService(_httpClient) {
+    function ListDataService(_storeService, _httpClient) {
+        this._storeService = _storeService;
         this._httpClient = _httpClient;
     }
     ListDataService.prototype.getCommandList = function () {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'commandList';
+        var url = this._storeService.CoatUrl + 'commandList';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]().set('name', 'none');
-        var headers = _utilities__WEBPACK_IMPORTED_MODULE_3__["MiscUtilities"].createHeadersJson();
+        var headers = _utilities__WEBPACK_IMPORTED_MODULE_2__["MiscUtilities"].createHeadersJson();
         return this._httpClient
             .get(url, { headers: headers, params: params });
     };
     ListDataService.prototype.getFileCommandList = function (requestor, action) {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'form';
+        var url = this._storeService.CoatUrl + 'form';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]()
             .set('action', action) // 'SCP File from your server to destination')
             .set('requestor', requestor)
             .set('team', 'Big');
-        var headers = _utilities__WEBPACK_IMPORTED_MODULE_3__["MiscUtilities"].createHeadersJson();
+        var headers = _utilities__WEBPACK_IMPORTED_MODULE_2__["MiscUtilities"].createHeadersJson();
         return this._httpClient
             .get(url, { headers: headers, params: params });
     };
     ListDataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_store_service__WEBPACK_IMPORTED_MODULE_3__["StoreService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], ListDataService);
     return ListDataService;
 }());
@@ -1685,7 +1706,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestService", function() { return RequestService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store.service */ "./src/app/services/store.service.ts");
 /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utilities */ "./src/app/utilities/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1701,11 +1722,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var RequestService = /** @class */ (function () {
-    function RequestService(_httpClient) {
+    function RequestService(_storeService, _httpClient) {
+        this._storeService = _storeService;
         this._httpClient = _httpClient;
+        this.coatApiUrl = _storeService.CoatUrl;
     }
     RequestService.prototype.requestAnOperation = function (fid, serverName, requestor, action, team, paramNames, paramValues) {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'RequestAnOperation';
+        var url = this.coatApiUrl + 'RequestAnOperation';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
         params = params
             .append('fid', fid)
@@ -1722,7 +1745,7 @@ var RequestService = /** @class */ (function () {
             .get(url, { headers: headers, params: params });
     };
     RequestService.prototype.performAnOperation = function (txnNumber, userName, password, type, token) {
-        var url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].coatApiUrl + 'PerformOperation';
+        var url = this.coatApiUrl + 'PerformOperation';
         var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
         params = params
             .append('txnNumber', txnNumber)
@@ -1736,7 +1759,8 @@ var RequestService = /** @class */ (function () {
     };
     RequestService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_store_service__WEBPACK_IMPORTED_MODULE_2__["StoreService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], RequestService);
     return RequestService;
 }());
@@ -1785,6 +1809,16 @@ var StoreService = /** @class */ (function () {
         },
         set: function (commands) {
             this.actionList = commands;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StoreService.prototype, "CoatUrl", {
+        get: function () {
+            return this.coatUrl;
+        },
+        set: function (user) {
+            this.coatUrl = user;
         },
         enumerable: true,
         configurable: true
@@ -2116,6 +2150,17 @@ var CustomValidators = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "./src/config.json":
+/*!*************************!*\
+  !*** ./src/config.json ***!
+  \*************************/
+/*! exports provided: coatApiUrl, default */
+/***/ (function(module) {
+
+module.exports = {"coatApiUrl":"http://localhost:8090/"};
 
 /***/ }),
 
