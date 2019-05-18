@@ -1,8 +1,9 @@
-target/**
-.settings/**
 .classpath
 .project
-deployable/**
-static/**
-serve/**
+.settings/
+#Aplication specific
+target/
+deployable/
+static/
+serve/
 
