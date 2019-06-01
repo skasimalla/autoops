@@ -7,6 +7,9 @@ By using or accessing the Software, you indicate your assent to be bound by this
 Your License Rights:
  Subject to the terms and conditions of this Agreement, Atlassian grants you a non-exclusive, non-sublicensable and non-transferable license to install and use the Software during the applicable License Term for your own business purposes, in accordance with this Agreement, your applicable Scope of Use, the Documentation and all Laws.
 
+3rd Party Licenses
+http://www.h2database.com/html/license.html
+
 
 DISCLAIMER
 
