@@ -1,0 +1,17 @@
+This Atomicity Systems LLC Software License Agreement (the “Agreement”) is between you and the Atomicity Systems LLC entity that owns the Software that you are accessing or using listed here (“Atomicity Systems LLC” or “we”). If you are agreeing to this Agreement not as an individual but on behalf of your company, government, or other entity for which you are acting (for example, as an employee or governmental official), then “you” means your entity and you are binding your entity to this Agreement. Atomicity Systems LLC may modify this Agreement from time to time.  The Software is not intended for and should not be used by anyone under the age of 16. You must ensure that all Authorized Users are at least 16 years old. 
+
+The “Effective Date” of this Agreement is the date which is the earlier of (a) your initial access to or use of the Software (as defined below) or (b) the effective date of the first Order referencing this Agreement.
+
+By using or accessing the Software, you indicate your assent to be bound by this Agreement.  If you do not agree to this Agreement, do not use or access the Software.
+
+Your License Rights:
+ Subject to the terms and conditions of this Agreement, Atlassian grants you a non-exclusive, non-sublicensable and non-transferable license to install and use the Software during the applicable License Term for your own business purposes, in accordance with this Agreement, your applicable Scope of Use, the Documentation and all Laws.
+
+
+DISCLAIMER
+
+We have painstakingly worked hard to make the software secure. Having said that. 
+
+THIS SOFTWARE AVAILABLE ON THE SITE Atomicity Systems LLC IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Atomicity Systems LLC, OR ANY OF THEIR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
