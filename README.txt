@@ -6,7 +6,7 @@ If you have this file, you already downloaded the file autoops.zip
 Steps:
 1. Unzip the file
 2. Go to conf folder and fix the values in the mail.props
-	The original setting look like 
+	The original settings look like 
 				mail.smtp.starttls.enable=false
 				mail.smtp.auth=false
 				mail.smtp.port=25
@@ -80,5 +80,6 @@ README.txt
 
 KNOWN ISSUES
 The text after end of <p> tag is getting truncated in the request.txt and response.txt
+This is only happening in google mail and works fine in local smtp based mail.
 
 Any questions please contact skasimalla@gmail.com

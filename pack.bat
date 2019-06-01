@@ -1,5 +1,6 @@
 set version=0.1
 
+mkdir release
 rm -rf release/autoops/*
 
 cp -r * release/autoops
@@ -13,6 +14,7 @@ rm -rf release/autoops/.settings
 rm -rf release/autoops/release
 rm -rf release/autoops/pom.xml
 rm -rf release/autoops/pack.bat
+rm -rf release/autoops/build-jar.bat
 rm -rf release/autoops/release-lib
 rm -rf release/autoops/conf/*.sql
 

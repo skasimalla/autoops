@@ -33,7 +33,7 @@ public class RESTController {
 	@RequestMapping("/register")
 	
 	public String register(@RequestParam(value = "name") String name, @RequestParam(value = "email") String email) {
-		String link = "http://" + FileUtil.getInstance().getProp("baseLink") + "verifyEmail?email=" + email + "&key="
+		String link = FileUtil.getInstance().getProp("baseLink") + "verifyEmail?email=" + email + "&key="
 				+ OneWayHash.oneWayHash(email);
 		//check if email is valid
 		String str = "Please DON'T click this link if you did not initiate SafelyOps registration";
