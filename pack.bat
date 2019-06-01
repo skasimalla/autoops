@@ -23,4 +23,7 @@ cp -r release-lib/* release/autoops/
 
 jar -cfM release/autoops%version%.zip release/autoops/*
 cksum release/autoops%version%.zip > release/autoops%version%.cksum
+echo "Press any key to upload, else close this window and fix it"
+pause
+scp release/autoops%version%.zip release/autoops%version%.cksum solutions@atomicitysystems.eastus.cloudapp.azure.com:/home/solutions/http-server
 pause
