@@ -14,6 +14,7 @@ rm -rf release/autoops/release
 rm -rf release/autoops/pom.xml
 rm -rf release/autoops/pack.bat
 rm -rf release/autoops/release-lib
+rm -rf release/autoops/conf/*.sql
 
 cp -r target/gs-rest-service-0.1.0.jar release/autoops/
 cp -r release-lib/* release/autoops/

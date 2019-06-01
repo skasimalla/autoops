@@ -1,0 +1,8 @@
+mail.smtp.starttls.enable=true
+mail.smtp.auth=true
+mail.smtp.port=587
+mail.smtp.host=smtp.gmail.com
+
+mail.smtp.user=yourid@gmail.com 
+#This requires changing a setting in gmail, please see readme file or contact us
+mail.smtp.password=Your_Gmail_Password
