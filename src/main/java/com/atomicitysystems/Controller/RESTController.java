@@ -36,14 +36,14 @@ public class RESTController {
 		String link = FileUtil.getInstance().getProp("baseLink") + "verifyEmail?email=" + email + "&key="
 				+ OneWayHash.oneWayHash(email);
 		//check if email is valid
-		String str = "Please DON'T click this link if you did not initiate SafelyOps registration";
+		String str = "Please DON'T click this link if you did not initiate AutoOps registration";
 		str += "<br>" + link;
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.put("from", FileUtil.getInstance().getProp("from_DL"));
 		hm.put("to", email);
 		hm.put("cc", "");
 		hm.put("bcc", FileUtil.getInstance().getProp("bcc_DL"));
-		hm.put("subject", "SafelyOps: Confirm your registration");
+		hm.put("subject", "AutoOps: Confirm your registration");
 		hm.put("filePath", "");
 		hm.put("htmlString", str);
 		new SendMail(hm).sendEmail();

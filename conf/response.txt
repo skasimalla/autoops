@@ -23,7 +23,7 @@ Output:<a href="${output_link}" target="_blank">Output Link</a>
 If you like this tool follow us on Linkedin <a href="" target="_blank">Like</a>
 
 <p>Regards,
-<br>Operations Automation Tool<br><br>
+<br>AutoOps<br><br>
 </p>
 </div>
 </body>

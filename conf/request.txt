@@ -21,7 +21,7 @@
 <a href="${accept_link}" target="_blank">Accept</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="${reject_link}" target="_blank">Deny</a> 
 <br> 
 <p>Regards,
-<br>Operations Automation Tool<br><br> 
+<br>AutoOps<br><br> 
 </p> 
 </div> 
 </body> 
