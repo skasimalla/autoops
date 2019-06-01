@@ -322,3 +322,28 @@ CREATE SEQUENCE OAT_TXN_SEQ MINVALUE 100000 MAXVALUE 10000000 INCREMENT BY 1 NOC
 	at org.h2.server.web.WebThread.process(WebThread.java:165)
 	at org.h2.server.web.WebThread.run(WebThread.java:90)
 	at java.lang.Thread.run(Thread.java:748)
+2019-06-01 17:50:46 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "('TeamNameMapping'[*],'Team1','youremail@yourcompany.com')"; expected "(, WITH, SELECT, FROM"; SQL statement:
+('TeamNameMapping','Team1','youremail@yourcompany.com') [42001-197]
+2019-06-01 17:53:52 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Column "CATEGORY" not found; SQL statement:
+delete from oat_txn where category = 'TeamNameMapping' [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.expression.Comparison.optimize(Comparison.java:177)
+	at org.h2.command.dml.Delete.prepare(Delete.java:141)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1022)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1009)
+	at org.h2.server.web.WebThread.process(WebThread.java:165)
+	at org.h2.server.web.WebThread.run(WebThread.java:90)
+	at java.lang.Thread.run(Thread.java:748)

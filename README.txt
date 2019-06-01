@@ -60,22 +60,6 @@ Testing:
 (This is one of my machines accessible on the internet.)
 5.> Path /tmp  (The questions change based on selected options)
 
-Typical folder structure
-h2-1.4.197.jar
-stop.bat
-LICENSE.txt
-conf
-db
-serve
-stop.sh
-start.bat
-start.sh
-gs-rest-service-0.1.0.jar
-static
-logs
-README.txt
-
-
 
 
 KNOWN ISSUES
