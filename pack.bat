@@ -1,3 +1,5 @@
+set version=0.1
+
 rm -rf release/autoops/*
 
 cp -r * release/autoops
@@ -16,7 +18,6 @@ rm -rf release/autoops/release-lib
 cp -r target/gs-rest-service-0.1.0.jar release/autoops/
 cp -r release-lib/* release/autoops/
 
-set version=0.1
 jar -cfM release/autoops%version%.zip release/autoops/*
 cksum release/autoops%version%.zip > release/autoops%version%.cksum
 pause
