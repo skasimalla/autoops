@@ -21,7 +21,7 @@ bcc_DL=opsauto3@gmail.com
 emailPostFix=
 
 #JDBC connection
-jdbc_connection_string=jdbc:h2:tcp://localhost:9092/./db/oat;IFEXISTS=TRUE;USER=oat;PASSWORD=123456
+jdbc_connection_string=jdbc:h2:tcp://localhost/./db/oat;IFEXISTS=TRUE;USER=oat;PASSWORD=123456
 
 #Key
 key=nn0Z1yL9dRJ5zS+yH+tsb8rxuJM665Uu14Qi5t3MTes=

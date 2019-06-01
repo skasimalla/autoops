@@ -1,0 +1,324 @@
+2018-08-24 17:59:10 database: wrong user or password; user: "OAT"
+org.h2.message.DbException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:107)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:155)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 9 more
+2018-12-11 20:05:31 database: wrong user or password; user: "OAT"
+org.h2.message.DbException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:107)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:155)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 9 more
+2019-04-26 23:07:42 database: wrong user or password; user: ""
+org.h2.message.DbException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:107)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:155)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 9 more
+2019-05-31 10:51:43 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:51:58 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:52:04 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:52:11 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:52:14 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:53:07 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:53:14 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 10:53:22 database: CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME[*] ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+)"; expected "TIMEZONE"; SQL statement:
+CREATE CACHED TABLE PUBLIC.OAT_TXN(
+    TXN_ID VARCHAR(20),
+    ACTION_ID VARCHAR(2000),
+    SERVER VARCHAR(200),
+    FID VARCHAR(200),
+    PARAM1 VARCHAR(2000),
+    REQUESTOR VARCHAR(200),
+    STATUS VARCHAR(200),
+    TS TIMESTAMP WITH TIME ZONE,
+    TS_LASTUPDATE TIMESTAMP WITH TIME ZONE
+) [42001-192]
+2019-05-31 11:56:41 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Sequence "OAT_TXN_SEQ" already exists; SQL statement:
+CREATE SEQUENCE OAT_TXN_SEQ MINVALUE 100000 MAXVALUE 10000000 INCREMENT BY 1 NOCYCLE [90035-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:57)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1022)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1009)
+	at org.h2.server.web.WebThread.process(WebThread.java:165)
+	at org.h2.server.web.WebThread.run(WebThread.java:90)
+	at java.lang.Thread.run(Thread.java:748)

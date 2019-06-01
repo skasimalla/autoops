@@ -3,7 +3,7 @@
 .settings/
 #Aplication specific
 target/
-deployable/
+release/
 static/
 serve/
 
