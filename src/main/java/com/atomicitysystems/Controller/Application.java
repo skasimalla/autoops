@@ -23,7 +23,7 @@ public class Application {
 				LOGGER.fine("Starting on" + s);
 				SpringApplication.run(Application.class, args);
 			} else {
-				LOGGER.fine("Invalid key, please contact opsauto3@gmail.com");
+				LOGGER.fine("Invalid key, please contact us");
 				SpringApplication.run(Application.class, args);//Remove this line in version 2 
 			}
 		} catch (UnknownHostException e) {
