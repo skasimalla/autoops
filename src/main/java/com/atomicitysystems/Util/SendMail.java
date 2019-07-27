@@ -70,7 +70,7 @@ public class SendMail {
 			message.addHeader("Content-type", "text/HTML; charset=UTF-8");
 			message.addHeader("format", "flowed");
 			message.addHeader("Content-Transfer-Encoding", "8bit");
-			message.setFrom(new InternetAddress(from, "SafelyOps"));
+			message.setFrom(new InternetAddress(from, "AutoOps"));
 			message.setReplyTo(InternetAddress.parse(from, false));
 			message.setSubject(subject, "UTF-8");
 			InternetAddress[] recipients = recepientAddresses(to);
