@@ -1,9 +1,9 @@
-set version=0.1
+version=0.1
 
-mkdir release
+mkdir -p release/autoops
 rm -rf release/autoops/*
 
-cp -r * release/autoops
+rsync -r --exclude="release" * release/autoops
 
 rm -rf release/autoops/logs/*
 rm -rf release/autoops/serve/*
@@ -21,9 +21,9 @@ rm -rf release/autoops/conf/*.sql
 cp -r target/gs-rest-service-0.1.0.jar release/autoops/
 cp -r release-lib/* release/autoops/
 
-jar -cfM release/autoops%version%.zip release/autoops/*
-cksum release/autoops%version%.zip > release/autoops%version%.cksum
-echo "Press any key to upload, else close this window and fix it"
-pause
-scp release/autoops%version%.zip release/autoops%version%.cksum solutions@atomicitysystems.eastus.cloudapp.azure.com:/home/solutions/http-server
-pause
+cd release
+
+jar -cfM autoops$version.zip autoops/*
+cksum autoops$version.zip > autoops$version.cksum
+
+#scp release/autoops%version%.zip release/autoops%version%.cksum solutions@atomicitysystems.eastus.cloudapp.azure.com:/home/solutions/http-server
