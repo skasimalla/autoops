@@ -1,4 +1,4 @@
-package com.atomicitysystems.Controller;
+package com.atomicitysystems;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

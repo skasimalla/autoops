@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.atomicitysystems.DAO.Mapping;
+
+import com.atomicitysystems.DTO.Mapping;
 
 public class StringUtil {
 	public static StringUtil x;

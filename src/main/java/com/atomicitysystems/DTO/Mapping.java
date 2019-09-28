@@ -1,4 +1,4 @@
-package com.atomicitysystems.DAO;
+package com.atomicitysystems.DTO;
 
 public class Mapping {
 

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.atomicitysystems.Actions.PerformOperation;
 import com.atomicitysystems.Actions.RequestOperation;
-import com.atomicitysystems.DAO.Mapping;
+import com.atomicitysystems.DTO.Mapping;
 import com.atomicitysystems.Util.DBUtil;
 import com.atomicitysystems.Util.FileUtil;
 import com.atomicitysystems.Util.OneWayHash;
