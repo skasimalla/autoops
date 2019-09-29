@@ -69,10 +69,10 @@ public class RESTController {
 	@RequestMapping("/commandList")
 	public List<Mapping> commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
 		Connection conn = DBUtil.getInstance().getConnection();
-		ArrayList<String> li = DBUtil.getInstance().getMappingListFromDB("Action", "%", conn);
+		HashMap<String, String> hm = DBUtil.getInstance().getMappingMapFromDB("Action", "%", conn);
 		List<Mapping> li2 = new ArrayList<Mapping>();
-		for (int i = 0; i < li.size(); i++)
-			li2.add(new Mapping(Integer.toString(i), (String) li.get(i)));
+		for (String key:hm.keySet())
+			li2.add(new Mapping((String) hm.get(key),key));
 		return li2;
 	}
 

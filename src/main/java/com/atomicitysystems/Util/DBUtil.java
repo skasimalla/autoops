@@ -73,7 +73,24 @@ public class DBUtil {
 		}
 		return null;
 	}
-
+	public HashMap<String, String> getMappingMapFromDB(String category, String columnName, Connection conn) {
+		HashMap<String, String> hm = new HashMap<String, String>();
+		try {
+			String query = "SELECT COLUMN_NAME, MAPPED_VALUE FROM OAT_MAPPING where CATEGORY=? and COLUMN_NAME like ?  order by COLUMN_NAME";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, category);
+			ps.setString(2, columnName);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				hm.put(rs.getString("COLUMN_NAME"),rs.getString("MAPPED_VALUE"));
+			}
+			return hm;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public boolean addMapping(String category, String columnName,String mappedValue ) {
 		try {
 			Connection conn=DBUtil.getInstance().getConnection();
