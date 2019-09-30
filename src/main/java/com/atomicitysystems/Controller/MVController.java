@@ -12,9 +12,8 @@ import com.atomicitysystems.Util.OneWayHash;
 @Controller
 public class MVController {
 	private final static Logger LOGGER = Logger.getLogger(MVController.class.getName());
-
-	//Another operation
-	@RequestMapping("/OperationApproval")
+/*	//This is now taken care in Angular
+	@RequestMapping("/approve")
 	public String showMessage1(@RequestParam(value = "txnNumber") String txnNumber, Model model) {
 		LOGGER.fine("in controller with param:" + txnNumber);
 		//ModelAndView mv = new ModelAndView("perform");
@@ -22,7 +21,13 @@ public class MVController {
 		return "perform";
 	}
 
-	@RequestMapping("/OperationReject")
+	@RequestMapping({"/approve"})
+	   public String index() {
+	       return "forward:/index.html/#/approve";
+	   }
+*/
+	
+	@RequestMapping("/reject")
 	public ModelAndView showMessage2(@RequestParam(value = "txnNumber") String txnNumber) {
 		LOGGER.fine("In controller with param:" + txnNumber);
 		ModelAndView mv = new ModelAndView("reject");

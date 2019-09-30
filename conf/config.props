@@ -10,8 +10,8 @@ baseLocation=absolute
 share_location=serve/
 
 #Accept and reject URLs
-accept_url=OperationApproval
-reject_url=OperationReject
+accept_url=#/approve
+reject_url=reject
 
 #Emails
 from_DL=autoops@yourcompany.com
