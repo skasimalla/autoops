@@ -1,7 +1,0 @@
-mail.smtp.starttls.enable=false
-mail.smtp.auth=false
-mail.smtp.port=25
-mail.smtp.host=localhost
-
-mail.smtp.user=autoops@yourcompany.com 
-mail.smtp.password=

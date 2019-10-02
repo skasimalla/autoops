@@ -158,13 +158,14 @@ public class DBUtil {
 	public Connection initializeConnection() {
 		try {
 			Class.forName("org.h2.Driver");
-			connection = DriverManager.getConnection(FileUtil.getInstance().getProp("jdbc_connection_string"));
+			String jdbcString = FileUtil.getInstance().getProp("jdbc_connection_string");
+			//.replace("~", System.getProperty("user.home"));
+			connection = DriverManager.getConnection(jdbcString);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (connection == null)
-			LOGGER.info("Returning null connection");
+		LOGGER.info("Returning null connection"+connection);
 		return connection;
 	}
 
