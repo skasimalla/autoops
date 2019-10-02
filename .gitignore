@@ -4,8 +4,8 @@
 #Aplication specific
 target/
 release/
-static/
-serve/
+static/*
+serve/*
 
 .vscode/launch.json
 .DS_Store

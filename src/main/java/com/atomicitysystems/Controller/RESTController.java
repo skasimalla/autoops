@@ -66,25 +66,16 @@ public class RESTController {
 	}
 
 	//Deprecate this method and use getList with param
-	@RequestMapping("/commandList")
-	public List<Mapping> commandList(@RequestParam(value = "name", defaultValue = "none") String name) {
+	@RequestMapping("/getList")
+	public List<Mapping> getList(@RequestParam(value = "name", defaultValue = "none") String name) {
 		Connection conn = DBUtil.getInstance().getConnection();
-		HashMap<String, String> hm = DBUtil.getInstance().getMappingMapFromDB("Action", "%", conn);
+		HashMap<String, String> hm = DBUtil.getInstance().getMappingMapFromDB(name, "%", conn);
 		List<Mapping> li2 = new ArrayList<Mapping>();
 		for (String key:hm.keySet())
 			li2.add(new Mapping((String) hm.get(key),key));
 		return li2;
 	}
 
-	@RequestMapping("/getList")
-	public List<Mapping> getList(@RequestParam(value = "name", defaultValue = "none") String name) {
-		Connection conn = DBUtil.getInstance().getConnection();
-		ArrayList<String> li = DBUtil.getInstance().getMappingListFromDB(name, "%", conn);
-		List<Mapping> li2 = new ArrayList<Mapping>();
-		for (int i = 0; i < li.size(); i++)
-			li2.add(new Mapping(Integer.toString(i), (String) li.get(i)));
-		return li2;
-	}
 
 	@RequestMapping("/form")
 	public List<Mapping> showMessage(@RequestParam(value = "action", required = true) String action,
