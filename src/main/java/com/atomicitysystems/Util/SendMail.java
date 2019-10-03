@@ -115,7 +115,8 @@ public class SendMail {
 		Properties props = new Properties();
 		InputStream inputStream;
 		try {
-			String path = Constants.propsFile.replace("~", System.getProperty("user.home"));
+			String path = Constants.mailFile.replace("~", System.getProperty("user.home"));
+			LOGGER.info("Retriving conf file from"+path);
 			inputStream = new FileInputStream(path);
 			//		    getClass().getClassLoader().getResourceAsStream("mail.props");
 			props.load(inputStream);
