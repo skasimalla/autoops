@@ -73,9 +73,9 @@ public class RequestOperation {
 					Constants.RequestReceived, conn);
 			String htmlStringPath = DBUtil.getInstance().getMappingValueFromDB(Constants.EmailTemplate,
 					Constants.RequestReceived, conn);
-			/*LOGGER.fine("htmlStringPath is" + htmlStringPath);
-			String filePath = System.getProperty("user.home") + "/oat/" + htmlStringPath;
-			*/
+			LOGGER.fine("htmlStringPath is" + htmlStringPath);
+			htmlStringPath = System.getProperty("user.home") + "/.autoops/" + htmlStringPath;
+			
 			String htmlString = FileUtil.getInstance().readFile(htmlStringPath);
 			//LOGGER.fine("html str is " + htmlString);
 			for (String key : parameterMap.keySet()) {
