@@ -1,6 +1,6 @@
 # AutoOps
 
-During my time at Citi, had the opportunity to work on a Big-data operations team for a brief period. Much of the work was manual, like opening a Service Now ticket/email and running those commands on the Unix terminal and pasting the output back on the ticket/email.
+During my time at a major multi national bank, had the opportunity to work on a Big-data operations team for a brief period. Much of the work was manual, like opening a Service Now ticket/email and running those commands on the Unix terminal and pasting the output back on the ticket/email.
 
 Being a developer who loves automation and HATES manual work I longed for an "Operations Automation" tool that made my life easier.
 
