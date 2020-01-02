@@ -1,4 +1,3 @@
-
 # AutoOps
 
 During my time at Citi, had the opportunity to work on a Big-data operations team for a brief period. Much of the work was manual, like opening a Service Now ticket/email and running those commands on the Unix terminal and pasting the output back on the ticket/email.
@@ -17,14 +16,15 @@ Samuel Kasimalla <br />
 Video: https://www.youtube.com/watch?v=t63pdFpg1mc <br />
 Live demo: http://3.230.199.13:8090/ <br />
 
-Credits: 
-Samuel Kasimalla: Concept, design, architecture and original UI <br />
+**Credits:** <br />
+
+**Samuel Kasimalla**: Concept, design, architecture and original UI <br />
 https://www.linkedin.com/in/skasimalla/ <br />
 
-Hal Keck : For most of Angular 8 work <br />
+**Hal Keck** : For most of Angular 8 work <br />
 https://www.linkedin.com/in/halkeck/ <br />
 
-Harish Beeram : Design and UX <br />
+**Harish Beeram** : Design and UX <br />
 https://www.linkedin.com/in/harishbeeram/ <br />
  
 Contact me on Linkedin for more information <br />
