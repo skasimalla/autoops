@@ -1,4 +1,4 @@
-# autoops
+# Autoops
 
 During my time at Citi, had the opportunity to work on a Big-data operations team for a brief period. Much of the work was manual, like opening a Service Now ticket/email and running those commands on the Unix terminal and pasting the output back on the ticket/email.
 
