@@ -1,0 +1,76 @@
+ul {
+    list-style: none;
+}
+
+ul.dropdown-menu-form {
+	padding: 5px 10px 0;
+	overflow-y: auto;
+    height: 500px;
+}
+
+/* Button Styling */
+.btn-outline-default {
+    border-color: lightgray;
+}
+
+.btn-outline-default:hover {
+    background-color: lightgray
+}
+
+.btn-outline-default:active,
+.btn-outline-default.active,
+.open > .btn-outline-default.dropdown-toggle {
+    background-color: lightgray;
+}
+
+.btn-outline-default:active:hover,
+.btn-outline-default:active:focus,
+.btn-outline-default:active.focus,
+.btn-outline-default.active:hover,
+.btn-outline-default.active:focus,
+.btn-outline-default.active.focus,
+.open > .btn-outline-default.dropdown-toggle:hover,
+.open > .btn-outline-default.dropdown-toggle:focus,
+.open > .btn-outline-default.dropdown-toggle.focus {
+    background-color: lightgray;
+}
+
+.btn-outline-primary.disabled:focus,
+.btn-outline-primary.disabled.focus,
+.btn-outline-primary:disabled:focus,
+.btn-outline-primary:disabled.focus {
+  background-color: lightgray;
+  border-color: lightgray;
+}
+.btn-outline-primary.disabled:hover,
+.btn-outline-primary:disabled:hover {
+  background-color: lightgray;
+  border-color: lightgray;
+}
+
+.option-box {
+    padding: 0; 
+    height: 39px !important;
+}
+
+span.limit-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.filter-btn {
+    position: relative;
+    height: 34px;
+}
+
+.filtered-btn a span {
+    display: block;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.dropdown-item-list {
+    padding: 2px 4px;
+    margin: 2px 0;
+}

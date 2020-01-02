@@ -1,0 +1,29 @@
+<div class="container  shadow-lg mt-5 pt-3 pb-3 rounded background">
+
+    <div class="row mt-5">
+        <div style="float: none; margin: 0 auto;">
+            <input class="form-control" [formControl]="userNameCtrl" placeholder="Username" [ngClass]="{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}" />
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div style="float: none; margin: 0 auto;">
+            <input type="password" class="form-control" [formControl]="passWordCtrl" placeholder="Password" [ngClass]="{'is-invalid': passWordCtrl.invalid && passWordCtrl.dirty}" />
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div style="float: none; margin: 0 auto;">
+            <button type="button" class="btn btn-primary" style="width: 200px" (click)="login()">Login</button>
+        </div>
+    </div>
+
+    <div *ngIf="showError" class="row mt-5">
+        <div style="float: none; margin: 0 auto;" class="text-danger">UserId and/or password is not correct</div>
+    </div>
+
+    <div class="text-center my-5">
+        <a [routerLink]="['/register']">New users please click on this link to register</a>
+    </div>
+
+</div>

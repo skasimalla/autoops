@@ -1,0 +1,17 @@
+.lg-image {
+    height: 90px;
+    width: 90px;
+}
+
+.sm-image {
+    height: 60px;
+    width: 60px;
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 1030;
+}

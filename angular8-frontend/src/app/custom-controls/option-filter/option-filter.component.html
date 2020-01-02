@@ -1,0 +1,27 @@
+<div class="form-control option-box" [ngClass]="{'is-invalid': formControl.invalid && formControl.dirty}" >
+    <div ngbDropdown class="filter-btn">
+        <a class="form-control btn" ngbDropdownToggle ngClass="readOnly">
+            <span class="limit-ellipses" ngClass="text-muted">
+                {{ selection || "Select Option" }}
+            </span>
+        </a>
+        <ul ngbDropdownMenu class="form-control dropdown-menu-form" collapse="isCollapsed">
+            <li>
+                <input 
+                    [formControl]="searchCtrl" 
+                    class="form-control" 
+                    type="text" 
+                    placeholder="Search" 
+                    (click)="$event.stopPropagation()">
+            </li>
+            <div class="dropdown-divider"></div>
+            <li 
+                class="dropdown-item dropdown-item-list" 
+                *ngFor="let reason of filteredReasons" 
+                (click)="onChange(reason);" >
+                {{reason.value}}
+            </li>
+            
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.header {
+    background-color: #343a40;
+    color: #fff;
+    max-height: 12%;
+  }
+
+.row {
+    align-items: center;
+}
+
+.logos  {
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.icon-home {
+    border-right: 1px solid rgba(0,0,0,.2);
+}
+
+.icon-home i {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.coats-logo {
+    height: 4%;
+    width: 4%;
+    color: #007bff!important;
+}
+
+img {
+    color: #007bff!important;
+}

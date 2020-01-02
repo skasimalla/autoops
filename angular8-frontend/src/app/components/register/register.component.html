@@ -1,0 +1,32 @@
+<div class="container  shadow-lg mt-5 pt-3 pb-3 rounded background">
+
+    <div class="row mt-5">
+        <div class="col-3 right-text">Name:</div>
+        <div class="col-9">
+            <input type="text" class="form-control" [formControl]="userNameCtrl" [ngClass]="{'is-invalid': userNameCtrl.invalid && userNameCtrl.dirty}" />
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 right-text">Email:</div>
+        <div class="col-9">
+            <input type="text" class="form-control" [formControl]="emailCtrl" [ngClass]="{'is-invalid': emailCtrl.invalid && emailCtrl.dirty}" />
+        </div>
+    </div>
+
+
+    <div class="row mt-4" *ngIf="showSubmitButton">
+        <div class="offset-5 col-2">
+            <button type="button" class="btn btn-primary" style="width: 200px" (click)="register()">Submit</button>
+        </div>
+    </div>
+
+    <div class="row my-5" *ngIf="!showSubmitButton">
+        <div class="offset-3 col-8">
+            <a [routerLink]="['login']">
+                Your registration request has been submitted. <br>Click here to navigate to the login page
+            </a>
+        </div>
+
+    </div>
+</div>

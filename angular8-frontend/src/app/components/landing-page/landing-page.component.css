@@ -1,0 +1,27 @@
+.text-dark {
+    color: var(--darkBlue);
+}
+
+.landing-page-btn {
+    background-color: var(--medBlue);
+    padding: 30px 30px;
+}
+
+.landing-page-btn:hover {
+    background-color: lightblue;
+}
+
+.lg-image {
+    height: 90px;
+    width: 200px;
+}
+
+fa-icon {
+    color: white;
+    margin-bottom: 50px;
+}
+
+/*.landing-page-icon {
+    padding-bottom: 90px;
+    margin-bottom: 20px;
+}c*/

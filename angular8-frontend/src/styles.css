@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    --medBlue: #1699FF;
+    --darkBlue: #2C567A;
+    --medGray: #8FA6B9;
+}
+
+body {
+    font-family: 'Merriweather', serif, Arial, Helvetica, sans-serif;
+}

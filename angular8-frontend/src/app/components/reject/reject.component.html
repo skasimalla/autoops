@@ -1,0 +1,33 @@
+<div class="container shadow-lg mt-5 pt-3 pb-3 rounded background">
+
+    <div class="row mt-3">
+        <div class="col-12 text-center" style="font-size: 14px">Transaction Id: <span style="color: blue"><em>{{transactionId}}</em></span></div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-right">Txn Id:</div>
+        <div class="col-9">
+            <input type="text" class="form-control" [formControl]="trxIdCtrl" />
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 text-right">Reason for Rejection:</div>
+        <div class="col-9">
+            <input type="password" class="form-control" [formControl]="reasonCtrl" />
+        </div>
+    </div>
+
+     <div class="row mt-4" *ngIf="showSubmitButton">
+        <div class="offset-4 col-2">
+            <button type="button" class="btn btn-primary" style="width: 200px" (click)="submit()">Submit</button>
+        </div>
+    </div>
+
+    <div class="row my-5" *ngIf="!showSubmitButton">
+        <div class="offset-3 col-8">
+            <a [routerLink]="['/landingpage']">Return to dashboard</a>
+        </div>
+    
+    </div>
+</div>

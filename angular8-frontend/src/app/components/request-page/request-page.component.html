@@ -1,0 +1,95 @@
+    
+<div class="container mt-3 pt-3 pb-3 rounded background" style="max-width:900px">
+    <div class="page-header offset-3">
+        <h1>  Request An Operation</h1>  
+    </div>
+    
+  <div class="row mt-3">
+    <div class="offset-1 col-2  text-right">Team Name:</div>
+    <div class="col-6">
+      <!-- <input class="form-control" [formControl]="teamNameCtrl" [name]="teamNameCtrlName" [ngClass]="{'is-invalid': teamNameCtrl.invalid && teamNameCtrl.dirty}" /> -->
+      <input list="id-teams" class="form-control" [formControl]="teamNameCtrl"  [name]="teamNameCtrlName" (click)="clear()" placeholder="{{teams[0].value}}">
+      <datalist id="id-teams">
+        <option *ngFor="let team of teams" [value]="team.value">{{team.key}}</option> 
+      </datalist> 
+    </div>
+  </div>
+
+    <div class="row mt-3">
+      <div class="offset-1 col-2 text-right">Server Name:</div>
+      <div class="col-6">
+        <!-- <input class="form-control" [formControl]="serverNameCtrl" [name]="serverNameCtrlName" placeholder="3.230.199.13" [ngClass]="{'is-invalid': serverNameCtrl.invalid && serverNameCtrl.dirty}" /> -->
+        <input list="id-servers" class="form-control" [formControl]="serverNameCtrl"  [name]="serverNameCtrlName" placeholder="{{servers[0].value}}">
+        <datalist id="id-servers">
+          <option *ngFor="let s of servers" [value]="s.value">{{s.key}}</option> 
+        </datalist> 
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="offset-1 col-2 text-right">Service Account:</div>
+      <div class="col-6">
+        <input class="form-control" [formControl]="fidCtrl" [name]="fidCtrlName" placeholder="fid1" [ngClass]="{'is-invalid': fidCtrl.invalid && fidCtrl.dirty}" />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="offset-1 col-2 text-right">Business Reason:</div>
+        <div class="col-6">
+          <input class="form-control" placeholder="Reason why this operation has to be performed" [ngClass]="{'is-invalid': fidCtrl.invalid && fidCtrl.dirty}" />
+        </div>
+      </div>
+  
+
+  <div class="row mt-3 mb-3">
+    <div class="col-3  text-right">Action To Perform:</div>
+    <div class="col-6">
+       <!-- <app-option-filter [formControl]="actionCtrl" [name]="actionCtrlName" (click)="getPart2()" [choices]="actionList"></app-option-filter> -->
+        <input list="id-commands" class="form-control" [formControl]="actionCtrl" [name]="actionCtrlName" (click)="clearAction()" (change)="getPart2()" placeholder="{{actionList[0].value}}">
+      <datalist id="id-commands">
+        <option *ngFor="let cmd of actionList" [value]="cmd.value">{{cmd.key}}</option> 
+      </datalist>  
+    </div>
+  </div>
+
+<!--   <div *ngIf="showBottomHalf()" class="mt-3">
+ -->
+ <div *ngIf="showPart2" class="mt-3">
+
+    <div *ngFor="let ctrl of part2Ctrls; let i = index" class="row mt-3">
+      <div class="col-3 text-right">{{fileCommandList[i].value}}:</div>
+
+      <div class="col-6">
+        <input class="form-control" [formControl]="part2Ctrls[i]" [name]="fileCommandList[i]" [ngClass]="{'is-invalid': part2Ctrls[i].invalid && part2Ctrls[i].dirty}" />
+      </div>
+
+    </div>
+
+    <div class="row mt-3 mb-3">
+      <div class="offset-4 col-6">
+        <button type="button" class="btn btn-primary" style="width: 200px" (click)="submitPart2()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #modalDialog class="modal fade" let-c="close" let-d="dismiss" role="dialog">
+
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <em class="col-12 mt-4 lead">{{modalMsg}}</em>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="onOk()">OK</button>
+  </div>
+
+</ng-template>
