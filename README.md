@@ -1,3 +1,4 @@
+
 # AutoOps
 
 During my time at Citi, had the opportunity to work on a Big-data operations team for a brief period. Much of the work was manual, like opening a Service Now ticket/email and running those commands on the Unix terminal and pasting the output back on the ticket/email.
@@ -11,20 +12,27 @@ It dynamically generates smart forms for SSH commands and runs them on machines 
 I believe in building algorithmically (best space-time complexity) and architecturally (scalable/designed for operational convenience) elegant solutions that are robust while being simple, following all the software architecture (SOLID) principles and design patterns (Gang of 4) and security policies (oneway hashing, etc..)
 
 Thanks,
-Samuel Kasimalla
+Samuel Kasimalla <br />
 
-Video: https://www.youtube.com/watch?v=t63pdFpg1mc
-Live demo: http://3.230.199.13:8090/ 
+Video: https://www.youtube.com/watch?v=t63pdFpg1mc <br />
+Live demo: http://3.230.199.13:8090/ <br />
 
 Credits: 
-Samuel Kasimalla: Concept, design, architecture and original UI
-https://www.linkedin.com/in/skasimalla/
+Samuel Kasimalla: Concept, design, architecture and original UI <br />
+https://www.linkedin.com/in/skasimalla/ <br />
 
-Hal Keck : For most of Angular 8 work
-https://www.linkedin.com/in/halkeck/
+Hal Keck : For most of Angular 8 work <br />
+https://www.linkedin.com/in/halkeck/ <br />
 
-Harish Beeram : Design and UX
-https://www.linkedin.com/in/harishbeeram/
+Harish Beeram : Design and UX <br />
+https://www.linkedin.com/in/harishbeeram/ <br />
+ 
+Contact me on Linkedin for more information <br />
+https://www.linkedin.com/in/skasimalla/ <br />
 
-Contact me on Linkedin for more information
-https://www.linkedin.com/in/skasimalla/
+
+```mermaid
+graph LR
+A[Request] -- Email/Msg --> B{Approval}
+B --> D(Action)
+```
