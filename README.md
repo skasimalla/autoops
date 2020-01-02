@@ -10,9 +10,21 @@ It dynamically generates smart forms for SSH commands and runs them on machines 
 
 I believe in building algorithmically (best space-time complexity) and architecturally (scalable/designed for operational convenience) elegant solutions that are robust while being simple, following all the software architecture (SOLID) principles and design patterns (Gang of 4) and security policies (oneway hashing, etc..)
 
+Thanks,
+Samuel Kasimalla
+
 Video: https://www.youtube.com/watch?v=t63pdFpg1mc
 Live demo: http://3.230.199.13:8090/ 
 
+Credits: 
+Samuel Kasimalla: Concept, design, architecture and original UI
+https://www.linkedin.com/in/skasimalla/
+
+Hal Keck : For most of Angular 8 work
+https://www.linkedin.com/in/halkeck/
+
+Harish Beeram : Design and UX
+https://www.linkedin.com/in/harishbeeram/
 
 Contact me on Linkedin for more information
 https://www.linkedin.com/in/skasimalla/
