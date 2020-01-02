@@ -4,7 +4,7 @@ During my time at a major multi national bank, had the opportunity to work on a 
 
 Being a developer who loves automation and HATES manual work I longed for an "Operations Automation" tool that made my life easier.
 
-After I left Citi, this problem still lingered in my head and for 2 years I researched various devops and operations tools, having found none, a few months ago decided to build it using Java and Angular. 
+After I left that company, this problem still lingered in my head and for 2 years I researched various devops and operations tools, having found none, a few months ago decided to build it using Java and Angular. 
 
 It dynamically generates smart forms for SSH commands and runs them on machines using a maker-checker based approval model and automates the grunt work of running the command, copying the output and responding to the requestor.
 
