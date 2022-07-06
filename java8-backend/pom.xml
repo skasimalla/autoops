@@ -9,7 +9,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<jsch.version>0.1.53</jsch.version>
+		<jsch.version>0.1.54</jsch.version>
 	</properties>
 
 	<parent>
